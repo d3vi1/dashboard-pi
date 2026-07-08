@@ -2,9 +2,9 @@
 
 ## Status
 
-- Raspberry Pi 4: untested
-- Raspberry Pi 1/2/3: untested release targets
-- Raspberry Pi 5: best-effort untested release target
+- Raspberry Pi 4/400/CM4/CM4S: untested active V1 target family
+- Raspberry Pi 5/500/CM5: best-effort untested V1 target family
+- Raspberry Pi 1/2/3/Zero: unsupported for V1; historical/experimental only
 
 ## Build Inputs
 
@@ -12,6 +12,8 @@
 - Linux kernel:
 - Raspberry Pi firmware:
 - WPEPlatform/Thunder:
+- Matter data model:
+- EEPROM state status:
 
 ## Changes
 

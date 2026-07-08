@@ -11,6 +11,17 @@ distribution using Buildroot.
 - Do not add a persistent writable root filesystem.
 - Do not switch the product runtime back to Cog/direct WPE launcher. The target
   architecture is WPEPlatform/Thunder.
+- Keep V1 server-less. Do not add a Dashboard Pi controller, production
+  database, OVA, Helm chart, SAML/OIDC/SCIM, fleet manager or license
+  enforcement to the V1 appliance.
+- Matter runs locally on the Raspberry Pi as a node/server/end-device. Do not
+  model V1 as requiring a Dashboard Pi Matter controller.
+- Treat EEPROM-backed Matter persistence as constrained R&D and never replace
+  it with a silent writable rootfs or hidden `/state` partition.
+- Raspberry Pi boards without suitable onboard EEPROM-backed state are not
+  active V1 targets. Pi 1/2/3/Zero defconfigs are experimental only.
+- CEC TV power control is opt-in. Matter power commands must not control TV
+  power by default.
 - Keep the kernel boot-critical path built in rather than relying on modules.
 - Treat the 3-second power-to-useful-pixels target as a measurement goal, not a
   claim.
@@ -43,3 +54,5 @@ contain spaces and Buildroot/Make paths are fragile in that case.
 - DHCP strings are validated before use.
 - Logs and caches remain volatile.
 - Documentation states tested versus untested board status accurately.
+- Documentation clearly separates open-source V1 appliance scope from deferred
+  enterprise/licensable controller scope.

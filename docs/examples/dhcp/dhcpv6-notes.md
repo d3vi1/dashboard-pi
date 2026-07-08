@@ -12,4 +12,8 @@ Planned production mechanism:
 - Suboption 2: remote syslog endpoint string.
 
 The current runtime contains only the DHCPv4 option 224 MVP parser. DHCPv6
-vendor-option parsing is Milestone 3 work.
+vendor-option parsing is Milestone 3 work and must not block V1.
+
+V1 ignores any future enterprise controller URL. DHCPv4 option 225 is reserved
+for that future use; the DHCPv6 equivalent should be a vendor option suboption,
+not a V1 requirement.

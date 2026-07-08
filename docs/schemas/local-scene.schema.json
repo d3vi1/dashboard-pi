@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/d3vi1/dashboard-pi/schemas/local-scene.schema.json",
+  "title": "Dashboard Pi Local Scene",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "id", "actions"],
+  "properties": {
+    "schema": { "const": "dashboard-pi-local-scene" },
+    "schema_version": { "const": 1 },
+    "id": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "name": { "type": "string", "maxLength": 128 },
+    "actions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dashboard_url": {
+          "type": "string",
+          "pattern": "^https?://.+"
+        },
+        "local_app": { "type": "string", "maxLength": 64 },
+        "dashboard_active": { "type": "boolean" },
+        "cec_active_source": { "type": "boolean", "default": false },
+        "cec_tv_power": { "enum": ["none", "wake", "standby"] }
+      }
+    }
+  }
+}

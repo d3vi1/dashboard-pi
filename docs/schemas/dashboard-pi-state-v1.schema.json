@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/d3vi1/dashboard-pi/schemas/dashboard-pi-state-v1.schema.json",
+  "title": "Dashboard Pi EEPROM State V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "device", "matter", "local", "integrity"],
+  "properties": {
+    "schema": { "const": "dashboard-pi-state" },
+    "schema_version": { "const": 1 },
+    "device": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state_generation", "factory_reset_generation"],
+      "properties": {
+        "state_generation": { "type": "integer", "minimum": 0 },
+        "factory_reset_generation": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "matter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "commissioned", "node_label", "fabric_state"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "commissioned": { "type": "boolean" },
+        "node_label": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "fabric_state": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["encoding", "payload"],
+          "properties": {
+            "encoding": { "enum": ["chip-kvs-v1"] },
+            "payload": { "type": "string", "pattern": "^[A-Za-z0-9_-]*$" }
+          }
+        }
+      }
+    },
+    "local": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["last_scene"],
+      "properties": {
+        "last_scene": { "type": "string", "minLength": 1, "maxLength": 64 }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["crc32c", "payload_sha256"],
+      "properties": {
+        "crc32c": { "type": "string", "pattern": "^[0-9a-fA-F]{8}$" },
+        "payload_sha256": { "type": "string", "pattern": "^[0-9a-fA-F]{64}$" }
+      }
+    }
+  }
+}

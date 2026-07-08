@@ -1,14 +1,15 @@
 # Dashboard Pi
 
-Dashboard Pi is a minimal read-only Raspberry Pi dashboard distribution built
-with Buildroot. The target system boots into an initramfs-only systemd runtime,
-gets its network configuration from DHCP/DHCPv6, discovers a dashboard URL from
-provisioning data, and displays it through a hardware-accelerated WPEPlatform
-stack.
+Dashboard Pi is a minimal read-only Raspberry Pi dashboard appliance
+distribution built with Buildroot. V1 is server-less and home/local first: a
+Raspberry Pi boots an initramfs-only systemd runtime, gets network configuration
+from DHCP/DHCPv6, discovers an optional dashboard URL from provisioning data,
+displays it through a hardware-accelerated WPEPlatform stack, and runs local
+Matter functionality on the Pi itself.
 
-The primary target is Raspberry Pi 4. Raspberry Pi 1, 2, 3 and 5 are present as
-release targets, with Pi 5 treated as best effort until kernel, firmware and
-WPEPlatform validation is complete.
+V1 does not require a Dashboard Pi controller, cloud service, appliance server,
+database, OVA, Helm chart, SAML/OIDC/SCIM, fleet manager or licensing server.
+Enterprise fleet management is a deferred, separately licensable product track.
 
 ## Current Status
 
@@ -16,12 +17,19 @@ This repository is at Milestone 1:
 
 - Buildroot external tree is present.
 - Buildroot is pinned by tooling to upstream `2026.05`.
-- Raspberry Pi 4 is the primary defconfig.
-- Raspberry Pi 1/2/3/5 defconfigs are present for release-target validation.
+- Raspberry Pi 4/400/CM4-class hardware is the primary V1 target family.
+- Raspberry Pi 5/500/CM5 is best-effort V1 pending EEPROM, kernel, firmware and
+  graphics validation.
+- Raspberry Pi 1/2/3/Zero-class boards are not V1 targets because V1 Matter
+  persistence requires onboard EEPROM-backed state. Their defconfigs are
+  historical/experimental only.
 - The runtime uses systemd, systemd-networkd, volatile journald, initramfs and a
   WPEPlatform launch placeholder.
 - Cog/direct WPE launcher is not the default architecture.
 - WPEPlatform/Thunder packaging and plugin activation are Milestone 4 R&D.
+- Matter 1.6/`connectedhomeip` data model 1.6.1 is the public design baseline.
+- EEPROM-backed Matter persistence is a constrained R&D target, not secure
+  storage.
 
 ## Architecture
 
@@ -35,8 +43,12 @@ This repository is at Milestone 1:
 | URL provisioning | DHCPv4 option 224 MVP, then vendor-specific DHCPv4/DHCPv6 |
 | Browser platform | WPEPlatform/Thunder, not Cog as the product runtime |
 | Graphics | DRM/KMS plus Mesa VC4/V3D paths, no X11 |
+| Matter | Local Raspberry Pi Matter node/server; no V1 controller |
+| Matter persistence | Single small EEPROM boot config variable where supported |
+| CEC power policy | TV power control opt-in; dashboard-only by default |
 | Logging | volatile journald; optional non-blocking remote syslog |
 | SSH | disabled by default |
+| Enterprise | Deferred, separate licensable product boundary |
 
 Critical boot path:
 
@@ -49,13 +61,15 @@ Critical boot path:
 
 ## Supported Boards
 
-| Target | Defconfig | Status | Expected graphics path |
+| Target | Defconfig | V1 status | Expected graphics path |
 | --- | --- | --- | --- |
-| Raspberry Pi 4 | `dashboard_pi_rpi4_64_defconfig` | primary, untested | `vc4` KMS + `v3d` Mesa |
-| Raspberry Pi 1 | `dashboard_pi_rpi1_defconfig` | release target, untested | `vc4` Mesa, constrained |
-| Raspberry Pi 2 | `dashboard_pi_rpi2_defconfig` | release target, untested | `vc4` Mesa |
-| Raspberry Pi 3 | `dashboard_pi_rpi3_64_defconfig` | release target, untested | `vc4` Mesa |
-| Raspberry Pi 5 | `dashboard_pi_rpi5_defconfig` | best effort, untested | `vc4` KMS + `v3d` Mesa |
+| Raspberry Pi 4 Model B | `dashboard_pi_rpi4_64_defconfig` | active V1, untested | `vc4` KMS + `v3d` Mesa |
+| Raspberry Pi 400 | `dashboard_pi_rpi4_64_defconfig` | active V1, untested | `vc4` KMS + `v3d` Mesa |
+| Compute Module 4/4S | `dashboard_pi_rpi4_64_defconfig` | active V1, untested | `vc4` KMS + `v3d` Mesa |
+| Raspberry Pi 5 | `dashboard_pi_rpi5_defconfig` | best-effort V1, untested | `vc4` KMS + `v3d` Mesa |
+| Raspberry Pi 500/500+ | `dashboard_pi_rpi5_defconfig` | best-effort V1, untested | `vc4` KMS + `v3d` Mesa |
+| Compute Module 5 | `dashboard_pi_rpi5_defconfig` | best-effort V1, untested | `vc4` KMS + `v3d` Mesa |
+| Raspberry Pi 1/2/3/Zero family | historical defconfigs only | unsupported for V1 | experimental |
 
 ## Build
 
@@ -99,6 +113,7 @@ MVP DHCPv4 behavior:
 
 - Option 224: dashboard URL as text.
 - Option 7: remote syslog IPv4 servers.
+- Option 225: reserved future enterprise controller URL; ignored for V1.
 
 Fallback order:
 
@@ -138,11 +153,15 @@ unless first useful browser content is measured, not merely process start.
 
 ## Raspberry Pi EEPROM Notes
 
+V1 Matter persistence is designed around one small boot EEPROM config variable:
+`DASHBOARD_PI_STATE_V1=<base64url(payload)>`. The payload is schema-versioned,
+checksummed, factory-resettable, and ignored safely if invalid. This is not
+secure storage and must not contain logs, telemetry, browser cache or volatile
+runtime data.
+
 For fastest local boot, configure the EEPROM boot order to try the intended
-medium first and avoid unnecessary network or USB fallback delays. Keep separate
-profiles for SD/eMMC and USB because USB enumeration can dominate cold boot
-time. Document measured firmware handoff times for each board and boot medium
-in release notes.
+medium first and avoid unnecessary network or USB fallback delays. Preserve
+unknown bootloader settings during Dashboard Pi state updates and factory reset.
 
 ## Security And Updates
 
@@ -151,6 +170,9 @@ in release notes.
 - No persistent writable rootfs.
 - Browser/platform runtime should run as a non-root user where feasible.
 - Runtime state, logs, cache and DHCP state are volatile.
+- Matter runs locally on the appliance. V1 does not add a controller server.
+- HDMI-CEC TV power control is disabled by default; Matter On/Off controls only
+  dashboard blank/unblank behavior unless policy explicitly allows TV power.
 - HTTPS dashboard URLs are supported when the image includes an appropriate CA
   certificate store.
 - Updates are full-image rebuilds and reflashes for now; A/B update design is

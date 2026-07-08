@@ -17,7 +17,9 @@ For DHCPv4 MVP:
 - send vendor class identifier `Dashboard-Pi`;
 - request option 224;
 - interpret option 224 as a dashboard URL string;
-- use standard option 7 for syslog server IPv4 addresses.
+- use standard option 7 for syslog server IPv4 addresses;
+- reserve option 225 for a future enterprise controller URL and ignore it in
+  V1.
 
 For DHCPv6 production work:
 
@@ -46,3 +48,5 @@ collisions and support structured extension.
 - Implement robust systemd-networkd lease parsing for DHCPv6 vendor options.
 - Add tests for malformed option 224 values.
 - Decide whether syslog protocol/port should be DHCP vendor suboptions.
+- Define future option 43/125 and DHCPv6 vendor-option layouts without making
+  them V1 blockers.

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/d3vi1/dashboard-pi/schemas/local-config.schema.json",
+  "title": "Dashboard Pi Local Config",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "dashboard", "display", "matter"],
+  "properties": {
+    "schema": { "const": "dashboard-pi-local-config" },
+    "schema_version": { "const": 1 },
+    "dashboard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["default_url", "fallback_page"],
+      "properties": {
+        "default_url": {
+          "type": ["string", "null"],
+          "pattern": "^(https?://|file:///).+"
+        },
+        "fallback_page": {
+          "type": "string",
+          "pattern": "^file:///.+"
+        }
+      }
+    },
+    "display": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["power_model", "cec"],
+      "properties": {
+        "power_model": { "enum": ["dashboard-only", "cec-tv", "both"] },
+        "cec": { "$ref": "#/$defs/cecPolicy" }
+      }
+    },
+    "matter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "device_type"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "device_type": {
+          "enum": ["casting-video-player", "basic-video-player"]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "cecPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "power_control", "allow_matter_to_control_tv_power"],
+      "properties": {
+        "enabled": { "type": "boolean", "default": true },
+        "power_control": { "type": "boolean", "default": false },
+        "wake_on_apply_scene": { "type": "boolean", "default": false },
+        "standby_on_blank": { "type": "boolean", "default": false },
+        "active_source_on_wake": { "type": "boolean", "default": true },
+        "allow_matter_to_control_tv_power": { "type": "boolean", "default": false }
+      }
+    }
+  }
+}

@@ -6,6 +6,12 @@
         "code": 224,
         "type": "string",
         "space": "dhcp4"
+      },
+      {
+        "name": "dashboard-controller-url",
+        "code": 225,
+        "type": "string",
+        "space": "dhcp4"
       }
     ],
     "client-classes": [
@@ -16,6 +22,10 @@
           {
             "name": "dashboard-url",
             "data": "https://dashboard.example.net/wallboard"
+          },
+          {
+            "name": "dashboard-controller-url",
+            "data": "reserved-for-future-enterprise-v1-ignores-this"
           },
           {
             "name": "log-servers",

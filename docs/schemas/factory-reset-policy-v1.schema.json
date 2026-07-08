@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/d3vi1/dashboard-pi/schemas/factory-reset-policy-v1.schema.json",
+  "title": "Dashboard Pi Factory Reset Policy V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "reset"],
+  "properties": {
+    "schema": { "const": "dashboard-pi-factory-reset-policy" },
+    "schema_version": { "const": 1 },
+    "reset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clear_eeprom_state", "clear_tmpfs_state", "preserve_bootloader_settings"],
+      "properties": {
+        "clear_eeprom_state": { "const": true },
+        "clear_tmpfs_state": { "const": true },
+        "preserve_bootloader_settings": { "const": true },
+        "reboot_after_reset": { "type": "boolean", "default": true }
+      }
+    }
+  }
+}

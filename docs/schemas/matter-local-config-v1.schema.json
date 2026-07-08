@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/d3vi1/dashboard-pi/schemas/matter-local-config-v1.schema.json",
+  "title": "Dashboard Pi Matter Local Config V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "matter"],
+  "properties": {
+    "schema": { "const": "dashboard-pi-matter-local-config" },
+    "schema_version": { "const": 1 },
+    "matter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "device_type", "safe_clusters"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "device_type": {
+          "enum": ["casting-video-player", "basic-video-player"]
+        },
+        "safe_clusters": {
+          "type": "array",
+          "items": {
+            "enum": ["OnOff", "LowPower", "KeypadInput", "ContentLauncher", "MediaPlayback"]
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
