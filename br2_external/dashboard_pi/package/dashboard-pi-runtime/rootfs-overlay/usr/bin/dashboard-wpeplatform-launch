@@ -1,0 +1,28 @@
+#!/bin/sh
+set -eu
+
+: "${DASHBOARD_URL:=file:///usr/share/dashboard-pi/error.html}"
+
+mkdir -p "${XDG_CACHE_HOME:-/run/dashboard-pi/cache}" "${HOME:-/run/dashboard-pi/home}"
+
+log() {
+	printf '%s\n' "dashboard-wpeplatform-launch: $*" >&2
+}
+
+if command -v WPEFramework >/dev/null 2>&1; then
+	log "starting WPEFramework runtime for $DASHBOARD_URL"
+	exec WPEFramework
+fi
+
+if command -v wpeframework >/dev/null 2>&1; then
+	log "starting wpeframework runtime for $DASHBOARD_URL"
+	exec wpeframework
+fi
+
+if command -v WPELauncher >/dev/null 2>&1; then
+	log "starting WPELauncher for $DASHBOARD_URL"
+	exec WPELauncher "$DASHBOARD_URL"
+fi
+
+log "WPEPlatform runtime is not installed yet; milestone 4 must add the Buildroot package set"
+sleep infinity

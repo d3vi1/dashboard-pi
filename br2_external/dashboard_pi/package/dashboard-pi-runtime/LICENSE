@@ -1,0 +1,6 @@
+SPDX-License-Identifier: GPL-2.0-only
+
+The dashboard-pi-runtime Buildroot package installs project-specific
+configuration, scripts and systemd units. These files are distributed under
+GPL-2.0-only. See the repository LICENSE file for the full license text and
+licensing notes for third-party components.

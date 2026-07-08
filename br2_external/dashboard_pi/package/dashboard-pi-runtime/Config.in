@@ -1,0 +1,7 @@
+config BR2_PACKAGE_DASHBOARD_PI_RUNTIME
+	bool "dashboard-pi runtime"
+	depends on BR2_INIT_SYSTEMD
+	help
+	  Install the Dashboard Pi systemd units, networkd configuration,
+	  URL discovery scripts, logging hooks, local fallback page and
+	  volatile runtime layout.

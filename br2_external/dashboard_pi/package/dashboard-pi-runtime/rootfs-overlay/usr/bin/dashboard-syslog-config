@@ -1,0 +1,60 @@
+#!/bin/sh
+set -eu
+
+out_dir=/run/rsyslog.d
+out_file="$out_dir/10-dhcp-syslog.conf"
+
+log() {
+	printf '%s\n' "dashboard-syslog-config: $*" >&2
+}
+
+valid_ipv4_list() {
+	for ip in "$@"; do
+		case "$ip" in
+			*[!0-9.]*|.*|*.) return 1 ;;
+			*.*.*.*) ;;
+			*) return 1 ;;
+		esac
+	done
+}
+
+extract_option_7() {
+	for lease in /run/systemd/netif/leases/* /run/systemd/netif/links/*; do
+		[ -r "$lease" ] || continue
+		sed -n \
+			-e 's/^ROUTERS=//p' \
+			-e 's/^OPTION_7=//p' \
+			-e 's/^DHCP_OPTION_7=//p' \
+			"$lease" |
+		while IFS= read -r value; do
+			value=$(printf '%s' "$value" | tr ',' ' ')
+			[ -n "$value" ] || continue
+			# shellcheck disable=SC2086
+			if valid_ipv4_list $value; then
+				printf '%s\n' "$value"
+				return 0
+			fi
+		done
+	done
+	return 1
+}
+
+servers=$(extract_option_7 | sed -n '1p' || true)
+[ -n "$servers" ] || {
+	log "no DHCP Option 7 syslog servers found"
+	exit 0
+}
+
+mkdir -p "$out_dir"
+{
+	printf '# Generated from DHCP Option 7 by dashboard-syslog-config.\n'
+	for server in $servers; do
+		printf '*.* @%s:514\n' "$server"
+	done
+} > "$out_file.tmp"
+mv "$out_file.tmp" "$out_file"
+log "configured remote syslog servers: $servers"
+
+if command -v systemctl >/dev/null 2>&1 && systemctl list-unit-files rsyslog.service >/dev/null 2>&1; then
+	systemctl try-restart rsyslog.service || true
+fi

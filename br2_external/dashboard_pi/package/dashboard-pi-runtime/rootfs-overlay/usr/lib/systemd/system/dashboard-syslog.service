@@ -1,0 +1,11 @@
+[Unit]
+Description=Configure optional DHCP-provided remote syslog
+After=dashboard-url.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/dashboard-syslog-config
+TimeoutStartSec=2s
+
+[Install]
+WantedBy=dashboard.target

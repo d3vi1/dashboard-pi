@@ -1,0 +1,14 @@
+[Unit]
+Description=Dashboard Pi HDMI-CEC input bridge
+After=dashboard-browser.service
+ConditionPathExistsGlob=/dev/cec*
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/dashboard-cec-daemon
+Restart=always
+RestartSec=2s
+Nice=5
+
+[Install]
+WantedBy=dashboard.target

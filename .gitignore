@@ -1,0 +1,10 @@
+.buildroot/
+.cache/
+output/
+dl/
+*.img
+*.vfat
+*.cpio
+*.cpio.*
+*.log
+.DS_Store

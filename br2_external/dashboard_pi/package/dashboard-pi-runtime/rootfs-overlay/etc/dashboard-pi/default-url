@@ -1,0 +1,4 @@
+# Optional build-time fallback dashboard URL.
+# The DHCP-provided URL takes precedence. Leave this commented to use the
+# embedded local error page when DHCP does not provide a valid URL.
+# DASHBOARD_URL=https://example.invalid/dashboard

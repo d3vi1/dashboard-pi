@@ -1,0 +1,28 @@
+{
+  "Dhcp4": {
+    "option-def": [
+      {
+        "name": "dashboard-url",
+        "code": 224,
+        "type": "string",
+        "space": "dhcp4"
+      }
+    ],
+    "client-classes": [
+      {
+        "name": "DashboardPi",
+        "test": "option[60].text == 'Dashboard-Pi'",
+        "option-data": [
+          {
+            "name": "dashboard-url",
+            "data": "https://dashboard.example.net/wallboard"
+          },
+          {
+            "name": "log-servers",
+            "data": "192.0.2.20"
+          }
+        ]
+      }
+    ]
+  }
+}

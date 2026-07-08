@@ -1,0 +1,31 @@
+#!/bin/sh
+set -eu
+
+log() {
+	printf '%s\n' "dashboard-cec-daemon: $*" >&2
+}
+
+cec_device=
+for dev in /dev/cec*; do
+	[ -e "$dev" ] || continue
+	cec_device=$dev
+	break
+done
+
+if [ -z "$cec_device" ]; then
+	log "no /dev/cec device found"
+	exit 0
+fi
+
+if command -v cec-ctl >/dev/null 2>&1; then
+	log "monitoring $cec_device with cec-ctl; action mapping is milestone 5 work"
+	exec cec-ctl --device "$cec_device" --monitor
+fi
+
+if command -v cec-client >/dev/null 2>&1; then
+	log "monitoring $cec_device with cec-client; action mapping is milestone 5 work"
+	exec cec-client
+fi
+
+log "no CEC userspace tool installed"
+sleep infinity

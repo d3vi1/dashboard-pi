@@ -1,0 +1,15 @@
+[Unit]
+Description=Discover dashboard URL from DHCP or local fallback
+DefaultDependencies=no
+After=systemd-networkd.service
+Before=dashboard-browser.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/dashboard-url-discover
+RemainAfterExit=yes
+TimeoutStartSec=4s
+
+[Install]
+WantedBy=dashboard.target

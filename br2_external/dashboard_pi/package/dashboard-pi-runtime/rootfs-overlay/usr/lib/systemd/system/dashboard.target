@@ -1,0 +1,7 @@
+[Unit]
+Description=Dashboard Pi fast display target
+Documentation=file:/usr/share/dashboard-pi/error.html
+Requires=systemd-networkd.service systemd-resolved.service dashboard-url.service dashboard-browser.service
+Wants=dashboard-cec.service dashboard-syslog.service
+After=systemd-networkd.service systemd-resolved.service
+AllowIsolate=yes

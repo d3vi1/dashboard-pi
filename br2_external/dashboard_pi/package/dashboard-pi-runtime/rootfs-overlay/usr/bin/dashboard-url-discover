@@ -1,0 +1,100 @@
+#!/bin/sh
+set -eu
+
+out_dir=/run/dashboard-pi
+out_file="$out_dir/url.env"
+fallback_file=/etc/dashboard-pi/default-url
+error_url=file:///usr/share/dashboard-pi/error.html
+
+mkdir -p "$out_dir"
+
+log() {
+	printf '%s\n' "dashboard-url-discover: $*" >&2
+}
+
+valid_url() {
+	case "$1" in
+		http://*|https://*) ;;
+		*) return 1 ;;
+	esac
+
+	printf '%s' "$1" | grep -Eq '^[A-Za-z0-9:/?#@._~%+=,&-]+$' || return 1
+
+	[ "${#1}" -le 2048 ]
+}
+
+env_quote() {
+	printf "%s" "$1" | sed "s/'/'\\\\''/g"
+}
+
+emit_url() {
+	url=$1
+	reason=$2
+	{
+		printf "DASHBOARD_URL='%s'\n" "$(env_quote "$url")"
+		printf "DASHBOARD_URL_SOURCE='%s'\n" "$(env_quote "$reason")"
+	} > "$out_file.tmp"
+	mv "$out_file.tmp" "$out_file"
+	log "selected $reason URL: $url"
+}
+
+candidate_from_lease_file() {
+	file=$1
+	[ -r "$file" ] || return 1
+
+	sed -n \
+		-e 's/^OPTION_224=//p' \
+		-e 's/^DHCP_OPTION_224=//p' \
+		-e 's/^DASHBOARD_URL=//p' \
+		-e 's/^VENDOR_DASHBOARD_URL=//p' \
+		"$file" |
+	while IFS= read -r value; do
+		value=${value#\"}
+		value=${value%\"}
+		[ -n "$value" ] || continue
+		if valid_url "$value"; then
+			printf '%s\n' "$value"
+			return 0
+		fi
+	done
+}
+
+find_dhcp_url() {
+	for lease in /run/systemd/netif/leases/* /run/systemd/netif/links/*; do
+		[ -e "$lease" ] || continue
+		url=$(candidate_from_lease_file "$lease" | sed -n '1p')
+		if [ -n "${url:-}" ]; then
+			printf '%s\n' "$url"
+			return 0
+		fi
+	done
+	return 1
+}
+
+find_local_url() {
+	[ -r "$fallback_file" ] || return 1
+	# shellcheck disable=SC1090
+	. "$fallback_file"
+	if [ -n "${DASHBOARD_URL:-}" ] && valid_url "$DASHBOARD_URL"; then
+		printf '%s\n' "$DASHBOARD_URL"
+		return 0
+	fi
+	return 1
+}
+
+i=0
+while [ "$i" -lt 16 ]; do
+	if url=$(find_dhcp_url); then
+		emit_url "$url" dhcp
+		exit 0
+	fi
+	i=$((i + 1))
+	sleep 0.25
+done
+
+if url=$(find_local_url); then
+	emit_url "$url" local
+	exit 0
+fi
+
+emit_url "$error_url" error-page

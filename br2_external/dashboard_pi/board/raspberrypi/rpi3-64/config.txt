@@ -1,0 +1,10 @@
+kernel=Image
+arm_64bit=1
+disable_overscan=1
+disable_splash=1
+boot_delay=0
+camera_auto_detect=0
+display_auto_detect=1
+dtparam=audio=off
+dtoverlay=disable-bt
+dtoverlay=vc4-kms-v3d,cma-256

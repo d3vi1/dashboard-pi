@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard Pi</title>
+  <style>
+    html,body{height:100%;margin:0;background:#101418;color:#f5f7fb;font-family:system-ui,sans-serif}
+    main{min-height:100%;display:grid;place-items:center;padding:5vw;box-sizing:border-box}
+    section{max-width:760px}
+    h1{font-size:clamp(2rem,5vw,4rem);margin:0 0 .5rem}
+    p,li{font-size:clamp(1rem,2vw,1.25rem);line-height:1.45;color:#d5dbe7}
+    code{color:#ffffff;background:#27313b;padding:.1rem .3rem;border-radius:.25rem}
+  </style>
+</head>
+<body>
+<main>
+  <section>
+    <h1>Dashboard URL not configured</h1>
+    <p>Dashboard Pi booted, but DHCP did not provide a valid dashboard URL and no local fallback URL was embedded.</p>
+    <ul>
+      <li>For DHCPv4, send vendor class <code>Dashboard-Pi</code> and option <code>224</code> as a text URL.</li>
+      <li>Use <code>http://</code> or <code>https://</code> URLs only.</li>
+      <li>Check volatile logs with a debug build or UART console.</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[Match]
+Type=ether
+
+[Network]
+DHCP=yes
+IPv6AcceptRA=yes
+LinkLocalAddressing=ipv6
+
+[DHCPv4]
+VendorClassIdentifier=Dashboard-Pi
+RequestOptions=7 224
+UseDNS=yes
+UseNTP=yes
+RouteMetric=10
+
+[DHCPv6]
+UseDNS=yes
+UseNTP=yes
+WithoutRA=solicit
+SendVendorOption=32473:1:string:Dashboard-Pi
