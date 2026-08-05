@@ -1,0 +1,6 @@
+# From https://wpewebkit.org/release/wpewebkit-2.52.5.html
+sha256  bcfc6c91db7659dcf24f6ff79ad27ac1eae1bc61dca0dbfee154706926740b3b  wpewebkit-2.52.5.tar.xz
+
+# Locally calculated from the release tarball.
+sha256  0b5d3a7cc325942567373b0ecd757d07c132e0ebd7c97bfc63f7e1a76094edb4  Source/WebCore/LICENSE-APPLE
+sha256  f2b3bd09663381deb99721109d22b47af1213bb43007a8b56a06c6375c8050ce  Source/WebCore/LICENSE-LGPL-2.1

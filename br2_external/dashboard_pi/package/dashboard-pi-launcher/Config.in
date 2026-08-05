@@ -1,0 +1,6 @@
+config BR2_PACKAGE_DASHBOARD_PI_LAUNCHER
+	bool "Dashboard Pi WPEPlatform launcher"
+	depends on BR2_PACKAGE_DASHBOARD_PI_WPEWEBKIT
+	help
+	  Install the minimal fullscreen Dashboard Pi launcher.
+	  It embeds WPE WebKit through WPEPlatform and runs on DRM/KMS.

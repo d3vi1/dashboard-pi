@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [[ $(uname -s) != Linux || $(uname -m) != x86_64 ]]; then
+	printf '%s\n' \
+		'Dashboard Pi image builds currently require a Linux x86_64 host.' \
+		'The pinned Bootlin cross-toolchain is distributed for Linux x86_64.' \
+		'Run this script in a Linux x86_64 VM or CI runner.' >&2
+	exit 2
+fi
+
 repo_root=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 buildroot_version=${BUILDROOT_VERSION:-2026.05}
 defconfig=${1:-dashboard_pi_rpi4_64_defconfig}

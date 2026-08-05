@@ -21,7 +21,7 @@ Initial ordering:
 1. systemd early boot and tmpfiles.
 2. `systemd-networkd.service` and `systemd-resolved.service`.
 3. `dashboard-url.service` validates DHCP/local URL input.
-4. `dashboard-browser.service` launches the WPEPlatform runtime wrapper.
+4. `dashboard-browser.service` launches the WPEPlatform DRM runtime wrapper.
 5. `dashboard-cec.service` and `dashboard-syslog.service` run as non-critical
    side services.
 
@@ -37,4 +37,4 @@ dashboard pixels.
   navigation or first paint.
 - Decide whether `network-online.target` is too conservative after DHCP lease
   parsing is implemented.
-- Remove placeholder WPEPlatform launch behavior once packages are available.
+- Replace load-finished timing with a real first-frame/first-pixel signal.

@@ -22,7 +22,7 @@ Scope:
 - DHCP/DHCPv6 network configuration.
 - DHCPv4 option 224 dashboard URL MVP.
 - DHCPv4 option 7 remote syslog MVP.
-- WPEPlatform/Thunder dashboard runtime.
+- WPE WebKit WPEPlatform dashboard runtime on direct DRM/KMS.
 - local Matter node/server on EEPROM-equipped Raspberry Pi boards.
 - HDMI-CEC navigation with safe display power policy.
 - volatile logs, cache and runtime state.
@@ -45,7 +45,7 @@ Out of scope:
 | 1 | Repository skeleton, external tree, docs, Pi 4 primary defconfig | green |
 | 2 | Minimal Pi 4 initramfs-only systemd boot | yellow |
 | 3 | DHCP/DHCPv6 provisioning and remote syslog | yellow |
-| 4 | WPEPlatform/Thunder packaging and dashboard shell | yellow |
+| 4 | WPEPlatform packaging, launcher and Pi 4 graphics validation | yellow |
 | 5 | CEC bridge, policy mapping and optional TV power | yellow |
 | 6 | Boot-time measurement and optimization | yellow |
 | 7 | EEPROM-backed local Matter node/server | yellow |

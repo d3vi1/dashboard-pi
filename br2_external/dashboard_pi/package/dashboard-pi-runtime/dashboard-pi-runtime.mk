@@ -1,4 +1,12 @@
+################################################################################
+#
+# dashboard-pi-runtime
+#
+################################################################################
+
 DASHBOARD_PI_RUNTIME_VERSION = 0.1
+DASHBOARD_PI_RUNTIME_SITE = $(DASHBOARD_PI_RUNTIME_PKGDIR)
+DASHBOARD_PI_RUNTIME_SITE_METHOD = local
 DASHBOARD_PI_RUNTIME_LICENSE = GPL-2.0-only
 DASHBOARD_PI_RUNTIME_LICENSE_FILES = LICENSE
 

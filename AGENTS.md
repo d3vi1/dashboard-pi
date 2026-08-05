@@ -35,6 +35,9 @@ distribution using Buildroot.
 
 The wrapper scripts use `~/.cache/dashboard-pi` because the repository path may
 contain spaces and Buildroot/Make paths are fragile in that case.
+Full image builds require Linux x86_64. The defconfig checker may run on macOS
+and deliberately evaluates Kconfig as a Linux x86_64 host so Bootlin toolchain
+options remain visible.
 
 ## Conventions
 
@@ -49,6 +52,8 @@ contain spaces and Buildroot/Make paths are fragile in that case.
 ## Review Checklist
 
 - Defconfigs run through `./scripts/check-defconfigs.sh`.
+- Pi 4 keeps `dashboard-pi-wpewebkit` and `dashboard-pi-launcher` enabled.
+- Pi 4 does not enable Buildroot `wpewebkit`, `wpebackend-fdo` or Cog.
 - Production cmdline has no serial console unless intentionally changed.
 - No package pulls in an unnecessary network service.
 - DHCP strings are validated before use.

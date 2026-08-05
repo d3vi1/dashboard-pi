@@ -38,17 +38,21 @@ Milestone wording should be interpreted as follows:
 | Milestone 7: board targets | Document per-board WPEPlatform support and acceleration status. Mark legacy fallbacks explicitly if any board cannot support WPEPlatform. |
 | Milestone 8: releases | Release artifacts should identify WPEPlatform/WebKit revisions and known graphics limitations per board. |
 
-## Buildroot Implications
+## Buildroot Implementation
 
-No Buildroot package, defconfig, or script change is made by this planning update. Future implementation work needs to validate:
+The Pi 4 implementation now uses the external `dashboard-pi-wpewebkit` package
+to pin WPE WebKit 2.52.5 and the `dashboard-pi-launcher` package for the minimal
+C launcher. Buildroot 2026.05 remains the baseline because the external package
+contains the browser-version divergence cleanly.
 
-- whether upstream Buildroot includes WPEPlatform-capable WPE WebKit at the chosen release point;
-- whether an external package overlay is needed for WPE WebKit, WPEPlatform, or the launcher;
-- whether existing Buildroot WPE packages assume the older `libwpe`/`wpebackend-fdo`/cog flow;
+Remaining work needs to validate:
+
 - the smallest systemd, udev, Mesa, libdrm, GBM, EGL, and certificate-store package set that supports the launcher;
 - the right way to expose render/card/input/CEC device access to a non-root dashboard user in an initramfs-only image.
 
-If WPEPlatform is not available in the selected Buildroot baseline, the implementation should prefer a clear temporary package overlay or pinned upstream revision over reverting the architecture to cog.
+The current package enables the built-in DRM/KMS and headless backends and
+disables the WPE legacy API, backend-fdo dependency and Wayland display backend.
+Hardware validation remains open.
 
 ## Launcher Requirements
 

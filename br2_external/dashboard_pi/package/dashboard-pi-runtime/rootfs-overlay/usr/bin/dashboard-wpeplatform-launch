@@ -9,20 +9,10 @@ log() {
 	printf '%s\n' "dashboard-wpeplatform-launch: $*" >&2
 }
 
-if command -v WPEFramework >/dev/null 2>&1; then
-	log "starting WPEFramework runtime for $DASHBOARD_URL"
-	exec WPEFramework
+if command -v dashboard-pi-launcher >/dev/null 2>&1; then
+	log "starting Dashboard Pi WPEPlatform launcher for $DASHBOARD_URL"
+	exec dashboard-pi-launcher "$DASHBOARD_URL"
 fi
 
-if command -v wpeframework >/dev/null 2>&1; then
-	log "starting wpeframework runtime for $DASHBOARD_URL"
-	exec wpeframework
-fi
-
-if command -v WPELauncher >/dev/null 2>&1; then
-	log "starting WPELauncher for $DASHBOARD_URL"
-	exec WPELauncher "$DASHBOARD_URL"
-fi
-
-log "WPEPlatform runtime is not installed yet; milestone 4 must add the Buildroot package set"
-sleep infinity
+log "dashboard-pi-launcher is not installed"
+exit 127

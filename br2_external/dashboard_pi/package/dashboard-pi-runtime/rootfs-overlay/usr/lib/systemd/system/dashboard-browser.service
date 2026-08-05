@@ -16,10 +16,12 @@ EnvironmentFile=/run/dashboard-pi/url.env
 Environment=XDG_RUNTIME_DIR=/run/dashboard-pi
 Environment=XDG_CACHE_HOME=/run/dashboard-pi/cache
 Environment=HOME=/run/dashboard-pi/home
+Environment=WPE_DISPLAY=wpe-display-drm
 ExecStart=/usr/bin/dashboard-wpeplatform-launch
 Restart=always
 RestartSec=750ms
 TimeoutStartSec=8s
+UMask=0077
 NoNewPrivileges=yes
 PrivateTmp=yes
 ProtectHome=yes

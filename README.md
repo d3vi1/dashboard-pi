@@ -13,7 +13,8 @@ Enterprise fleet management is a deferred, separately licensable product track.
 
 ## Current Status
 
-This repository is at Milestone 1:
+This repository has completed the repository skeleton and has started the Pi 4
+graphics/browser milestone:
 
 - Buildroot external tree is present.
 - Buildroot is pinned by tooling to upstream `2026.05`.
@@ -23,10 +24,14 @@ This repository is at Milestone 1:
 - Raspberry Pi 1/2/3/Zero-class boards are not V1 targets because V1 Matter
   persistence requires onboard EEPROM-backed state. Their defconfigs are
   historical/experimental only.
-- The runtime uses systemd, systemd-networkd, volatile journald, initramfs and a
-  WPEPlatform launch placeholder.
+- The runtime uses systemd, systemd-networkd, volatile journald and initramfs.
+- Pi 4 builds pin WPE WebKit `2.52.5`, enable its WPEPlatform DRM/KMS backend,
+  and package a project-owned minimal launcher.
 - Cog/direct WPE launcher is not the default architecture.
-- WPEPlatform/Thunder packaging and plugin activation are Milestone 4 R&D.
+- Legacy `libwpe`, `wpebackend-fdo`, Cog, Weston and X11 are not in the Pi 4
+  production browser path.
+- Cross-compilation and source integrity are CI-checked; Raspberry Pi hardware
+  rendering and first-pixel timing remain unvalidated.
 - Matter 1.6/`connectedhomeip` data model 1.6.1 is the public design baseline.
 - EEPROM-backed Matter persistence is a constrained R&D target, not secure
   storage.
@@ -41,8 +46,8 @@ This repository is at Milestone 1:
 | Runtime root | initramfs-only; no persistent root filesystem |
 | Network | systemd-networkd DHCP/DHCPv6 |
 | URL provisioning | DHCPv4 option 224 MVP, then vendor-specific DHCPv4/DHCPv6 |
-| Browser platform | WPEPlatform/Thunder, not Cog as the product runtime |
-| Graphics | DRM/KMS plus Mesa VC4/V3D paths, no X11 |
+| Browser platform | WPE WebKit 2.52.5 WPEPlatform with a project launcher |
+| Graphics | Direct WPEPlatform DRM/KMS plus Mesa V3D on Pi 4, no compositor or X11 |
 | Matter | Local Raspberry Pi Matter node/server; no V1 controller |
 | Matter persistence | Single small EEPROM boot config variable where supported |
 | CEC power policy | TV power control opt-in; dashboard-only by default |
@@ -57,7 +62,8 @@ Critical boot path:
 3. systemd starts `dashboard.target`.
 4. systemd-networkd acquires DHCP/DHCPv6 data.
 5. `dashboard-url.service` validates provisioning data.
-6. WPEPlatform runtime starts once URL discovery has completed.
+6. The Dashboard Pi WPEPlatform launcher starts on `wpe-display-drm` once URL
+   discovery has completed.
 
 ## Supported Boards
 
@@ -73,15 +79,20 @@ Critical boot path:
 
 ## Build
 
-The requested repository path contains a space. Use the wrapper scripts; they
-place Buildroot and output directories under `~/.cache/dashboard-pi` to avoid
-Make path issues.
+Full image builds currently require a Linux `x86_64` host because the pinned
+Bootlin cross-toolchain is distributed for that host. On macOS, use a Linux
+`x86_64` VM or a CI runner. The requested repository path contains a space, so
+the wrapper places Buildroot and output directories under
+`~/.cache/dashboard-pi`.
 
 ```sh
 ./scripts/build.sh dashboard_pi_rpi4_64_defconfig
 ```
 
-Check all defconfigs without building full images:
+Check all defconfigs without building full images. This checker can run on
+macOS because it evaluates Kconfig as a Linux `x86_64` build host and asserts
+that systemd, initramfs and the Pi 4 WPEPlatform packages were not silently
+dropped:
 
 ```sh
 ./scripts/check-defconfigs.sh
@@ -141,6 +152,11 @@ systemd-analyze critical-chain dashboard.target
 journalctl -b -u dashboard-url.service -u dashboard-browser.service
 ```
 
+The current launcher control surface is deliberately process-local: `SIGHUP`
+reloads without cache, `SIGUSR1` navigates back and `SIGUSR2` navigates forward.
+The future CEC bridge should emit these actions through systemd rather than
+injecting shell commands or depending on launcher-specific Cog interfaces.
+
 For boot timing, collect:
 
 - UART logs with kernel timestamps.
@@ -173,8 +189,7 @@ unknown bootloader settings during Dashboard Pi state updates and factory reset.
 - Matter runs locally on the appliance. V1 does not add a controller server.
 - HDMI-CEC TV power control is disabled by default; Matter On/Off controls only
   dashboard blank/unblank behavior unless policy explicitly allows TV power.
-- HTTPS dashboard URLs are supported when the image includes an appropriate CA
-  certificate store.
+- Pi 4 images include a CA certificate store for HTTPS dashboard URLs.
 - Updates are full-image rebuilds and reflashes for now; A/B update design is
   intentionally out of scope for the first milestones.
 
