@@ -85,6 +85,11 @@ Bootlin cross-toolchain is distributed for that host. On macOS, use a Linux
 the wrapper places Buildroot and output directories under
 `~/.cache/dashboard-pi`.
 
+For a reproducible Linux `x86_64` environment, use the Ubuntu development
+container described in [`contrib/dev-container/README.md`](contrib/dev-container/README.md).
+It persists source, downloads and build output in bind-mounted directories and
+does not need privileged mode or host networking.
+
 ```sh
 ./scripts/build.sh dashboard_pi_rpi4_64_defconfig
 ```

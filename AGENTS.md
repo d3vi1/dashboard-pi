@@ -39,6 +39,10 @@ Full image builds require Linux x86_64. The defconfig checker may run on macOS
 and deliberately evaluates Kconfig as a Linux x86_64 host so Bootlin toolchain
 options remain visible.
 
+A reproducible Ubuntu development host is available under
+`contrib/dev-container/`. It must remain unprivileged, publish no ports and have
+no access to the host Docker socket.
+
 ## Conventions
 
 - Keep project files ASCII unless an upstream file requires otherwise.

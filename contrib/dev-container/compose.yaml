@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: GPL-2.0-only
+
+services:
+  dev:
+    build:
+      context: .
+      args:
+        UBUNTU_IMAGE: ${UBUNTU_IMAGE:-ubuntu:24.04@sha256:561618e2c15bf2397621dd04f96926663a3b5616c189cf7e38db7e82f5c538ea}
+        BUILDER_UID: ${BUILDER_UID:-1000}
+        BUILDER_GID: ${BUILDER_GID:-1000}
+    image: local/dashboard-pi-dev:ubuntu-24.04
+    container_name: dashboard-pi-dev
+    init: true
+    restart: unless-stopped
+    working_dir: /workspace/dashboard-pi
+    command: ["sleep", "infinity"]
+    environment:
+      DASHBOARD_PI_CACHE: /cache/dashboard-pi
+      CCACHE_DIR: /cache/ccache
+      HOME: /home/builder
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
+    volumes:
+      - ./workspace:/workspace
+      - ./cache:/cache
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD-SHELL", "test -x /usr/bin/make && test -d /workspace/dashboard-pi/.git"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
