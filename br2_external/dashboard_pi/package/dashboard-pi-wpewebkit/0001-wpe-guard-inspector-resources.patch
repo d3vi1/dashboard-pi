@@ -10,7 +10,6 @@ target name, and do not install the resource bundle in that configuration.
  1 file changed, 6 insertions(+), 4 deletions(-)
 
 diff --git a/Source/WebKit/PlatformWPE.cmake b/Source/WebKit/PlatformWPE.cmake
-index 000000000000..111111111111 100644
 --- a/Source/WebKit/PlatformWPE.cmake
 +++ b/Source/WebKit/PlatformWPE.cmake
 @@ -588,12 +588,14 @@ if (ENABLE_BREAKPAD)
