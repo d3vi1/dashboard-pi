@@ -1,0 +1,3134 @@
+{
+  "boot_fat": {
+    "allocated_bytes": 201326592,
+    "files": [
+      "/bcm2711-rpi-4-b.dtb",
+      "/bcm2711-rpi-400.dtb",
+      "/bcm2711-rpi-cm4.dtb",
+      "/bcm2711-rpi-cm4s.dtb",
+      "/cmdline.txt",
+      "/config.txt",
+      "/fixup4.dat",
+      "/overlays/",
+      "/start4.elf",
+      "/Image",
+      "/overlays/act-led.dtbo",
+      "/overlays/adafruit-st7735r.dtbo",
+      "/overlays/adafruit18.dtbo",
+      "/overlays/adau1977-adc.dtbo",
+      "/overlays/adau7002-simple.dtbo",
+      "/overlays/ads1015.dtbo",
+      "/overlays/ads1115.dtbo",
+      "/overlays/ads7846.dtbo",
+      "/overlays/adv7282m.dtbo",
+      "/overlays/adv728x-m.dtbo",
+      "/overlays/akkordion-iqdacplus.dtbo",
+      "/overlays/allo-boss-dac-pcm512x-audio.dtbo",
+      "/overlays/allo-boss2-dac-audio.dtbo",
+      "/overlays/allo-digione.dtbo",
+      "/overlays/allo-katana-dac-audio.dtbo",
+      "/overlays/allo-piano-dac-pcm512x-audio.dtbo",
+      "/overlays/allo-piano-dac-plus-pcm512x-audio.dtbo",
+      "/overlays/anyspi.dtbo",
+      "/overlays/apds9960.dtbo",
+      "/overlays/applepi-dac.dtbo",
+      "/overlays/arducam-64mp.dtbo",
+      "/overlays/arducam-pivariety.dtbo",
+      "/overlays/at86rf233.dtbo",
+      "/overlays/audioinjector-addons.dtbo",
+      "/overlays/audioinjector-bare-i2s.dtbo",
+      "/overlays/audioinjector-isolated-soundcard.dtbo",
+      "/overlays/audioinjector-ultra.dtbo",
+      "/overlays/audioinjector-wm8731-audio.dtbo",
+      "/overlays/audiosense-pi.dtbo",
+      "/overlays/audremap-pi5.dtbo",
+      "/overlays/audremap.dtbo",
+      "/overlays/balena-fin.dtbo",
+      "/overlays/bcm2712d0.dtbo",
+      "/overlays/camera-mux-2port.dtbo",
+      "/overlays/camera-mux-4port.dtbo",
+      "/overlays/cap1106.dtbo",
+      "/overlays/chipcap2.dtbo",
+      "/overlays/chipdip-dac.dtbo",
+      "/overlays/cirrus-wm5102.dtbo",
+      "/overlays/cm-swap-i2c0.dtbo",
+      "/overlays/cma.dtbo",
+      "/overlays/crystalfontz-cfa050_pi_m.dtbo",
+      "/overlays/cutiepi-panel.dtbo",
+      "/overlays/dacberry400.dtbo",
+      "/overlays/dht11.dtbo",
+      "/overlays/dionaudio-kiwi.dtbo",
+      "/overlays/dionaudio-loco-v2.dtbo",
+      "/overlays/dionaudio-loco.dtbo",
+      "/overlays/disable-bt-pi5.dtbo",
+      "/overlays/disable-bt.dtbo",
+      "/overlays/disable-emmc2.dtbo",
+      "/overlays/disable-wifi-pi5.dtbo",
+      "/overlays/disable-wifi.dtbo",
+      "/overlays/dpi18.dtbo",
+      "/overlays/dpi18cpadhi.dtbo",
+      "/overlays/dpi24.dtbo",
+      "/overlays/draws.dtbo",
+      "/overlays/dwc-otg-deprecated.dtbo",
+      "/overlays/dwc2.dtbo",
+      "/overlays/edt-ft5406.dtbo",
+      "/overlays/enc28j60-spi2.dtbo",
+      "/overlays/enc28j60.dtbo",
+      "/overlays/exc3000.dtbo",
+      "/overlays/ezsound-6x8iso.dtbo",
+      "/overlays/fbtft.dtbo",
+      "/overlays/fe-pi-audio.dtbo",
+      "/overlays/fsm-demo.dtbo",
+      "/overlays/gc9a01.dtbo",
+      "/overlays/ghost-amp.dtbo",
+      "/overlays/goodix.dtbo",
+      "/overlays/googlevoicehat-soundcard.dtbo",
+      "/overlays/gpio-charger.dtbo",
+      "/overlays/gpio-fan.dtbo",
+      "/overlays/gpio-hog.dtbo",
+      "/overlays/gpio-ir-tx.dtbo",
+      "/overlays/gpio-ir.dtbo",
+      "/overlays/gpio-key.dtbo",
+      "/overlays/gpio-led.dtbo",
+      "/overlays/gpio-no-bank0-irq.dtbo",
+      "/overlays/gpio-no-irq.dtbo",
+      "/overlays/gpio-poweroff.dtbo",
+      "/overlays/gpio-shutdown.dtbo",
+      "/overlays/hd44780-i2c-lcd.dtbo",
+      "/overlays/hd44780-lcd.dtbo",
+      "/overlays/hdmi-backlight-hwhack-gpio.dtbo",
+      "/overlays/hifiberry-adc.dtbo",
+      "/overlays/hifiberry-adc8x.dtbo",
+      "/overlays/hifiberry-amp.dtbo",
+      "/overlays/hifiberry-amp100.dtbo",
+      "/overlays/hifiberry-amp3.dtbo",
+      "/overlays/hifiberry-amp4pro.dtbo",
+      "/overlays/hifiberry-dac.dtbo",
+      "/overlays/hifiberry-dac8x.dtbo",
+      "/overlays/hifiberry-dacplus-pro.dtbo",
+      "/overlays/hifiberry-dacplus-std.dtbo",
+      "/overlays/hifiberry-dacplus.dtbo",
+      "/overlays/hifiberry-dacplusadc.dtbo",
+      "/overlays/hifiberry-dacplusadcpro.dtbo",
+      "/overlays/hifiberry-dacplusdsp.dtbo",
+      "/overlays/hifiberry-dacplushd.dtbo",
+      "/overlays/hifiberry-digi-pro.dtbo",
+      "/overlays/hifiberry-digi.dtbo",
+      "/overlays/highperi.dtbo",
+      "/overlays/hy28a.dtbo",
+      "/overlays/hy28b-2017.dtbo",
+      "/overlays/hy28b.dtbo",
+      "/overlays/i-sabre-q2m.dtbo",
+      "/overlays/i2c-bcm2708.dtbo",
+      "/overlays/i2c-fan.dtbo",
+      "/overlays/i2c-gpio.dtbo",
+      "/overlays/i2c-mux.dtbo",
+      "/overlays/i2c-pwm-pca9685a.dtbo",
+      "/overlays/i2c-rtc-gpio.dtbo",
+      "/overlays/i2c-rtc.dtbo",
+      "/overlays/i2c-sensor.dtbo",
+      "/overlays/i2c0-pi5.dtbo",
+      "/overlays/i2c0.dtbo",
+      "/overlays/i2c1-pi5.dtbo",
+      "/overlays/i2c1.dtbo",
+      "/overlays/i2c2-pi5.dtbo",
+      "/overlays/i2c3-pi5.dtbo",
+      "/overlays/i2c3.dtbo",
+      "/overlays/i2c4.dtbo",
+      "/overlays/i2c5.dtbo",
+      "/overlays/i2c6.dtbo",
+      "/overlays/i2s-dac.dtbo",
+      "/overlays/i2s-gpio28-31.dtbo",
+      "/overlays/i2s-master-dac.dtbo",
+      "/overlays/ilitek-ts-i2c.dtbo",
+      "/overlays/ilitek251x.dtbo",
+      "/overlays/imx219.dtbo",
+      "/overlays/imx258.dtbo",
+      "/overlays/imx283.dtbo",
+      "/overlays/imx290.dtbo",
+      "/overlays/imx296.dtbo",
+      "/overlays/imx327.dtbo",
+      "/overlays/imx335.dtbo",
+      "/overlays/imx378.dtbo",
+      "/overlays/imx415.dtbo",
+      "/overlays/imx462.dtbo",
+      "/overlays/imx477.dtbo",
+      "/overlays/imx500-pi5.dtbo",
+      "/overlays/imx500.dtbo",
+      "/overlays/imx519.dtbo",
+      "/overlays/imx708.dtbo",
+      "/overlays/interludeaudio-analog.dtbo",
+      "/overlays/interludeaudio-digital.dtbo",
+      "/overlays/iqaudio-codec.dtbo",
+      "/overlays/iqaudio-dac.dtbo",
+      "/overlays/iqaudio-dacplus.dtbo",
+      "/overlays/iqaudio-digi-wm8804-audio.dtbo",
+      "/overlays/iqs550.dtbo",
+      "/overlays/irs1125.dtbo",
+      "/overlays/jedec-spi-nor.dtbo",
+      "/overlays/justboom-both.dtbo",
+      "/overlays/justboom-dac.dtbo",
+      "/overlays/justboom-digi.dtbo",
+      "/overlays/ltc294x.dtbo",
+      "/overlays/max98357a.dtbo",
+      "/overlays/maxtherm.dtbo",
+      "/overlays/mbed-dac.dtbo",
+      "/overlays/mcp23017.dtbo",
+      "/overlays/mcp23s17.dtbo",
+      "/overlays/mcp2515-can0.dtbo",
+      "/overlays/mcp2515-can1.dtbo",
+      "/overlays/mcp2515.dtbo",
+      "/overlays/mcp251xfd.dtbo",
+      "/overlays/mcp3008.dtbo",
+      "/overlays/mcp3202.dtbo",
+      "/overlays/mcp342x.dtbo",
+      "/overlays/media-center.dtbo",
+      "/overlays/merus-amp.dtbo",
+      "/overlays/midi-uart0-pi5.dtbo",
+      "/overlays/midi-uart0.dtbo",
+      "/overlays/midi-uart1-pi5.dtbo",
+      "/overlays/midi-uart1.dtbo",
+      "/overlays/midi-uart2-pi5.dtbo",
+      "/overlays/midi-uart2.dtbo",
+      "/overlays/midi-uart3-pi5.dtbo",
+      "/overlays/midi-uart3.dtbo",
+      "/overlays/midi-uart4-pi5.dtbo",
+      "/overlays/midi-uart4.dtbo",
+      "/overlays/midi-uart5.dtbo",
+      "/overlays/minipitft13.dtbo",
+      "/overlays/miniuart-bt.dtbo",
+      "/overlays/mipi-dbi-spi.dtbo",
+      "/overlays/mira220.dtbo",
+      "/overlays/mlx90640.dtbo",
+      "/overlays/mmc.dtbo",
+      "/overlays/mz61581.dtbo",
+      "/overlays/ov2311.dtbo",
+      "/overlays/ov5647.dtbo",
+      "/overlays/ov64a40.dtbo",
+      "/overlays/ov7251.dtbo",
+      "/overlays/ov9281.dtbo",
+      "/overlays/papirus.dtbo",
+      "/overlays/pca953x.dtbo",
+      "/overlays/pcf857x.dtbo",
+      "/overlays/pcie-32bit-dma-pi5.dtbo",
+      "/overlays/pcie-32bit-dma.dtbo",
+      "/overlays/pciex1-compat-pi5.dtbo",
+      "/overlays/pibell.dtbo",
+      "/overlays/pifacedigital.dtbo",
+      "/overlays/pifi-40.dtbo",
+      "/overlays/pifi-dac-hd.dtbo",
+      "/overlays/pifi-dac-zero.dtbo",
+      "/overlays/pifi-mini-210.dtbo",
+      "/overlays/piglow.dtbo",
+      "/overlays/pimidi.dtbo",
+      "/overlays/pineboards-hat-ai.dtbo",
+      "/overlays/pineboards-hatdrive-poe-plus.dtbo",
+      "/overlays/piscreen.dtbo",
+      "/overlays/piscreen2r.dtbo",
+      "/overlays/pisound-micro.dtbo",
+      "/overlays/pisound-pi5.dtbo",
+      "/overlays/pisound.dtbo",
+      "/overlays/pitft22.dtbo",
+      "/overlays/pitft28-capacitive.dtbo",
+      "/overlays/pitft28-resistive.dtbo",
+      "/overlays/pitft35-resistive.dtbo",
+      "/overlays/pivision.dtbo",
+      "/overlays/pps-gpio.dtbo",
+      "/overlays/proto-codec.dtbo",
+      "/overlays/pwm-2chan.dtbo",
+      "/overlays/pwm-gpio-fan.dtbo",
+      "/overlays/pwm-gpio.dtbo",
+      "/overlays/pwm-ir-tx.dtbo",
+      "/overlays/pwm-pio.dtbo",
+      "/overlays/pwm.dtbo",
+      "/overlays/pwm1.dtbo",
+      "/overlays/qca7000-uart0.dtbo",
+      "/overlays/qca7000.dtbo",
+      "/overlays/ramoops-pi4.dtbo",
+      "/overlays/ramoops.dtbo",
+      "/overlays/rootmaster.dtbo",
+      "/overlays/rotary-encoder.dtbo",
+      "/overlays/rpi-backlight.dtbo",
+      "/overlays/rpi-codeczero.dtbo",
+      "/overlays/rpi-dacplus.dtbo",
+      "/overlays/rpi-dacpro.dtbo",
+      "/overlays/rpi-digiampplus.dtbo",
+      "/overlays/rpi-ft5406.dtbo",
+      "/overlays/rpi-fw-uart.dtbo",
+      "/overlays/rpi-poe-plus.dtbo",
+      "/overlays/rpi-poe.dtbo",
+      "/overlays/rpi-power-hat-b.dtbo",
+      "/overlays/rpi-power-hat-t.dtbo",
+      "/overlays/rpi-sense-v2.dtbo",
+      "/overlays/rpi-sense.dtbo",
+      "/overlays/rpi-tv.dtbo",
+      "/overlays/rra-digidac1-wm8741-audio.dtbo",
+      "/overlays/sainsmart18.dtbo",
+      "/overlays/sc16is750-i2c.dtbo",
+      "/overlays/sc16is752-i2c.dtbo",
+      "/overlays/sc16is75x-spi.dtbo",
+      "/overlays/sdhost.dtbo",
+      "/overlays/sdio-pi5.dtbo",
+      "/overlays/sdio.dtbo",
+      "/overlays/seeed-can-fd-hat-v1.dtbo",
+      "/overlays/seeed-can-fd-hat-v2.dtbo",
+      "/overlays/sh1106-spi.dtbo",
+      "/overlays/si446x-spi0.dtbo",
+      "/overlays/smi-dev.dtbo",
+      "/overlays/smi-nand.dtbo",
+      "/overlays/smi.dtbo",
+      "/overlays/spi-gpio35-39.dtbo",
+      "/overlays/spi-gpio40-45.dtbo",
+      "/overlays/spi-rtc.dtbo",
+      "/overlays/spi0-0cs.dtbo",
+      "/overlays/spi0-1cs-inverted.dtbo",
+      "/overlays/spi0-1cs.dtbo",
+      "/overlays/spi0-2cs.dtbo",
+      "/overlays/spi1-1cs.dtbo",
+      "/overlays/spi1-2cs.dtbo",
+      "/overlays/spi1-3cs.dtbo",
+      "/overlays/spi2-1cs-pi5.dtbo",
+      "/overlays/spi2-1cs.dtbo",
+      "/overlays/spi2-2cs-pi5.dtbo",
+      "/overlays/spi2-2cs.dtbo",
+      "/overlays/spi2-3cs.dtbo",
+      "/overlays/spi3-1cs-pi5.dtbo",
+      "/overlays/spi3-1cs.dtbo",
+      "/overlays/spi3-2cs-pi5.dtbo",
+      "/overlays/spi3-2cs.dtbo",
+      "/overlays/spi4-1cs.dtbo",
+      "/overlays/spi4-2cs.dtbo",
+      "/overlays/spi5-1cs-pi5.dtbo",
+      "/overlays/spi5-1cs.dtbo",
+      "/overlays/spi5-2cs-pi5.dtbo",
+      "/overlays/spi5-2cs.dtbo",
+      "/overlays/spi6-1cs.dtbo",
+      "/overlays/spi6-2cs.dtbo",
+      "/overlays/ssd1306-spi.dtbo",
+      "/overlays/ssd1306.dtbo",
+      "/overlays/ssd1327-spi.dtbo",
+      "/overlays/ssd1331-spi.dtbo",
+      "/overlays/ssd1351-spi.dtbo",
+      "/overlays/sunfounder-pipower3.dtbo",
+      "/overlays/sunfounder-pironman5.dtbo",
+      "/overlays/superaudioboard.dtbo",
+      "/overlays/sx150x.dtbo",
+      "/overlays/tc358743-audio.dtbo",
+      "/overlays/tc358743-pi5.dtbo",
+      "/overlays/tc358743.dtbo",
+      "/overlays/tinylcd35.dtbo",
+      "/overlays/tpm-slb9670.dtbo",
+      "/overlays/tpm-slb9673.dtbo",
+      "/overlays/uart0-pi5.dtbo",
+      "/overlays/uart0.dtbo",
+      "/overlays/uart1-pi5.dtbo",
+      "/overlays/uart1.dtbo",
+      "/overlays/uart2-pi5.dtbo",
+      "/overlays/uart2.dtbo",
+      "/overlays/uart3-pi5.dtbo",
+      "/overlays/uart3.dtbo",
+      "/overlays/uart4-pi5.dtbo",
+      "/overlays/uart4.dtbo",
+      "/overlays/uart5.dtbo",
+      "/overlays/udrc.dtbo",
+      "/overlays/ugreen-dabboard.dtbo",
+      "/overlays/upstream-pi4.dtbo",
+      "/overlays/upstream.dtbo",
+      "/overlays/vc4-fkms-v3d-pi4.dtbo",
+      "/overlays/vc4-fkms-v3d.dtbo",
+      "/overlays/vc4-kms-dpi-generic.dtbo",
+      "/overlays/vc4-kms-dpi-hyperpixel2r.dtbo",
+      "/overlays/vc4-kms-dpi-hyperpixel4.dtbo",
+      "/overlays/vc4-kms-dpi-hyperpixel4sq.dtbo",
+      "/overlays/vc4-kms-dpi-panel.dtbo",
+      "/overlays/vc4-kms-dsi-7inch.dtbo",
+      "/overlays/vc4-kms-dsi-generic.dtbo",
+      "/overlays/vc4-kms-dsi-ili9881-5inch.dtbo",
+      "/overlays/vc4-kms-dsi-ili9881-7inch.dtbo",
+      "/overlays/vc4-kms-dsi-lt070me05000-v2.dtbo",
+      "/overlays/vc4-kms-dsi-lt070me05000.dtbo",
+      "/overlays/vc4-kms-dsi-waveshare-800x480.dtbo",
+      "/overlays/vc4-kms-dsi-waveshare-panel-v2.dtbo",
+      "/overlays/vc4-kms-dsi-waveshare-panel.dtbo",
+      "/overlays/vc4-kms-kippah-7inch.dtbo",
+      "/overlays/vc4-kms-v3d-pi4.dtbo",
+      "/overlays/vc4-kms-v3d-pi5.dtbo",
+      "/overlays/vc4-kms-v3d.dtbo",
+      "/overlays/vc4-kms-vga666.dtbo",
+      "/overlays/vec-gpio-pi5.dtbo",
+      "/overlays/vga666.dtbo",
+      "/overlays/vl805.dtbo",
+      "/overlays/w1-gpio-pi5.dtbo",
+      "/overlays/w1-gpio-pullup-pi5.dtbo",
+      "/overlays/w1-gpio-pullup.dtbo",
+      "/overlays/w1-gpio.dtbo",
+      "/overlays/w5500.dtbo",
+      "/overlays/watterott-display.dtbo",
+      "/overlays/waveshare-can-fd-hat-mode-a.dtbo",
+      "/overlays/waveshare-can-fd-hat-mode-b.dtbo",
+      "/overlays/wifimac.dtbo",
+      "/overlays/wittypi.dtbo",
+      "/overlays/wm8960-soundcard.dtbo",
+      "/overlays/ws2812-pio.dtbo",
+      "/overlays/overlay_map.dtb",
+      "/overlays/README"
+    ],
+    "free_bytes": 42172416,
+    "occupied_bytes": 159154176
+  },
+  "buildroot_version": "2026.05",
+  "dependency_trees": {
+    "/usr/bin/dashboard-pi-launcher": {
+      "nodes": [
+        {
+          "needed": [
+            "libsoup-3.0.so.0",
+            "libgmodule-2.0.so.0",
+            "libWPEWebKit-2.0.so.1",
+            "libgio-2.0.so.0",
+            "libgobject-2.0.so.0",
+            "libglib-2.0.so.0",
+            "libc.so.6"
+          ],
+          "path": "/usr/bin/dashboard-pi-launcher"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libgobject-2.0.so.0",
+            "libgio-2.0.so.0",
+            "libsqlite3.so.0",
+            "libpsl.so.5",
+            "libz.so.1",
+            "libnghttp2.so.14",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsoup-3.0.so.0"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgmodule-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libgmodule-2.0.so.0",
+            "libsoup-3.0.so.0",
+            "libepoxy.so.0",
+            "libatomic.so.1",
+            "libgio-2.0.so.0",
+            "libinput.so.10",
+            "libudev.so.1",
+            "libxkbcommon.so.0",
+            "libfreetype.so.6",
+            "libfontconfig.so.1",
+            "libwebpmux.so.3",
+            "libexpat.so.1",
+            "libgobject-2.0.so.0",
+            "libglib-2.0.so.0",
+            "libsystemd.so.0",
+            "libicudata.so.78",
+            "libicui18n.so.78",
+            "libharfbuzz.so.0",
+            "libjpeg.so.8",
+            "libpng16.so.16",
+            "libgbm.so.1",
+            "libdrm.so.2",
+            "libicuuc.so.78",
+            "libxml2.so.16",
+            "libsqlite3.so.0",
+            "libxslt.so.1",
+            "libz.so.1",
+            "libharfbuzz-icu.so.0",
+            "libgcrypt.so.20",
+            "libgpg-error.so.0",
+            "libwebpdemux.so.2",
+            "libwebp.so.7",
+            "libtasn1.so.6",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libWPEWebKit-2.0.so.1"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libgobject-2.0.so.0",
+            "libgmodule-2.0.so.0",
+            "libz.so.1",
+            "libmount.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgio-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libffi.so.8",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgobject-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libpcre2-8.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libglib-2.0.so.0"
+        },
+        {
+          "needed": [
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libc.so.6"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libz.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsqlite3.so.0"
+        },
+        {
+          "needed": [
+            "libicuuc.so.78",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libpsl.so.5"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libz.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libnghttp2.so.14"
+        },
+        {
+          "needed": [],
+          "path": "/lib/ld-linux-aarch64.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libepoxy.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libatomic.so.1"
+        },
+        {
+          "needed": [
+            "libudev.so.1",
+            "libevdev.so.2",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libinput.so.10"
+        },
+        {
+          "needed": [
+            "libcap.so.2",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libudev.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libxkbcommon.so.0"
+        },
+        {
+          "needed": [
+            "libpng16.so.16",
+            "libz.so.1",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libfreetype.so.6"
+        },
+        {
+          "needed": [
+            "libfreetype.so.6",
+            "libexpat.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libfontconfig.so.1"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libwebp.so.7",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libwebpmux.so.3"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libexpat.so.1"
+        },
+        {
+          "needed": [
+            "libcap.so.2",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsystemd.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libicudata.so.78"
+        },
+        {
+          "needed": [
+            "libicuuc.so.78",
+            "libicudata.so.78",
+            "libatomic.so.1",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libicui18n.so.78"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libfreetype.so.6",
+            "libglib-2.0.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libharfbuzz.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libjpeg.so.8"
+        },
+        {
+          "needed": [
+            "libz.so.1",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libpng16.so.16"
+        },
+        {
+          "needed": [
+            "libdrm.so.2",
+            "libexpat.so.1",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgbm.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libdrm.so.2"
+        },
+        {
+          "needed": [
+            "libicudata.so.78",
+            "libatomic.so.1",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libicuuc.so.78"
+        },
+        {
+          "needed": [
+            "libz.so.1",
+            "libicuuc.so.78",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libxml2.so.16"
+        },
+        {
+          "needed": [
+            "libxml2.so.16",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libxslt.so.1"
+        },
+        {
+          "needed": [
+            "libharfbuzz.so.0",
+            "libicuuc.so.78",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libharfbuzz-icu.so.0"
+        },
+        {
+          "needed": [
+            "libgpg-error.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgcrypt.so.20"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgpg-error.so.0"
+        },
+        {
+          "needed": [
+            "libwebp.so.7",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libwebpdemux.so.2"
+        },
+        {
+          "needed": [
+            "libsharpyuv.so.0",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libwebp.so.7"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libtasn1.so.6"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libc.so.6",
+            "libgcc_s.so.1"
+          ],
+          "path": "/lib/libstdc++.so.6"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libm.so.6"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libgcc_s.so.1"
+        },
+        {
+          "needed": [
+            "libblkid.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libmount.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libffi.so.8"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libpcre2-8.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libevdev.so.2"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libcap.so.2"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsharpyuv.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libblkid.so.1"
+        }
+      ],
+      "unresolved": []
+    },
+    "/usr/libexec/wpe-webkit-2.0/WPEGPUProcess": {
+      "nodes": [
+        {
+          "needed": [
+            "libWPEWebKit-2.0.so.1",
+            "libfreetype.so.6",
+            "libfontconfig.so.1",
+            "libepoxy.so.0",
+            "libwebpmux.so.3",
+            "libwebp.so.7",
+            "libexpat.so.1",
+            "libharfbuzz.so.0",
+            "libjpeg.so.8",
+            "libpng16.so.16",
+            "libz.so.1",
+            "libgmodule-2.0.so.0",
+            "libglib-2.0.so.0",
+            "libsoup-3.0.so.0",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6"
+          ],
+          "path": "/usr/libexec/wpe-webkit-2.0/WPEGPUProcess"
+        },
+        {
+          "needed": [
+            "libgmodule-2.0.so.0",
+            "libsoup-3.0.so.0",
+            "libepoxy.so.0",
+            "libatomic.so.1",
+            "libgio-2.0.so.0",
+            "libinput.so.10",
+            "libudev.so.1",
+            "libxkbcommon.so.0",
+            "libfreetype.so.6",
+            "libfontconfig.so.1",
+            "libwebpmux.so.3",
+            "libexpat.so.1",
+            "libgobject-2.0.so.0",
+            "libglib-2.0.so.0",
+            "libsystemd.so.0",
+            "libicudata.so.78",
+            "libicui18n.so.78",
+            "libharfbuzz.so.0",
+            "libjpeg.so.8",
+            "libpng16.so.16",
+            "libgbm.so.1",
+            "libdrm.so.2",
+            "libicuuc.so.78",
+            "libxml2.so.16",
+            "libsqlite3.so.0",
+            "libxslt.so.1",
+            "libz.so.1",
+            "libharfbuzz-icu.so.0",
+            "libgcrypt.so.20",
+            "libgpg-error.so.0",
+            "libwebpdemux.so.2",
+            "libwebp.so.7",
+            "libtasn1.so.6",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libWPEWebKit-2.0.so.1"
+        },
+        {
+          "needed": [
+            "libpng16.so.16",
+            "libz.so.1",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libfreetype.so.6"
+        },
+        {
+          "needed": [
+            "libfreetype.so.6",
+            "libexpat.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libfontconfig.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libepoxy.so.0"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libwebp.so.7",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libwebpmux.so.3"
+        },
+        {
+          "needed": [
+            "libsharpyuv.so.0",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libwebp.so.7"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libexpat.so.1"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libfreetype.so.6",
+            "libglib-2.0.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libharfbuzz.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libjpeg.so.8"
+        },
+        {
+          "needed": [
+            "libz.so.1",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libpng16.so.16"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libz.so.1"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgmodule-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libpcre2-8.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libglib-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libgobject-2.0.so.0",
+            "libgio-2.0.so.0",
+            "libsqlite3.so.0",
+            "libpsl.so.5",
+            "libz.so.1",
+            "libnghttp2.so.14",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsoup-3.0.so.0"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libc.so.6",
+            "libgcc_s.so.1"
+          ],
+          "path": "/lib/libstdc++.so.6"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libm.so.6"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libgcc_s.so.1"
+        },
+        {
+          "needed": [
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libc.so.6"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libatomic.so.1"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libgobject-2.0.so.0",
+            "libgmodule-2.0.so.0",
+            "libz.so.1",
+            "libmount.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgio-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libudev.so.1",
+            "libevdev.so.2",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libinput.so.10"
+        },
+        {
+          "needed": [
+            "libcap.so.2",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libudev.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libxkbcommon.so.0"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libffi.so.8",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgobject-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libcap.so.2",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsystemd.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libicudata.so.78"
+        },
+        {
+          "needed": [
+            "libicuuc.so.78",
+            "libicudata.so.78",
+            "libatomic.so.1",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libicui18n.so.78"
+        },
+        {
+          "needed": [
+            "libdrm.so.2",
+            "libexpat.so.1",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgbm.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libdrm.so.2"
+        },
+        {
+          "needed": [
+            "libicudata.so.78",
+            "libatomic.so.1",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libicuuc.so.78"
+        },
+        {
+          "needed": [
+            "libz.so.1",
+            "libicuuc.so.78",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libxml2.so.16"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libz.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsqlite3.so.0"
+        },
+        {
+          "needed": [
+            "libxml2.so.16",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libxslt.so.1"
+        },
+        {
+          "needed": [
+            "libharfbuzz.so.0",
+            "libicuuc.so.78",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libharfbuzz-icu.so.0"
+        },
+        {
+          "needed": [
+            "libgpg-error.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgcrypt.so.20"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgpg-error.so.0"
+        },
+        {
+          "needed": [
+            "libwebp.so.7",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libwebpdemux.so.2"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libtasn1.so.6"
+        },
+        {
+          "needed": [],
+          "path": "/lib/ld-linux-aarch64.so.1"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsharpyuv.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libpcre2-8.so.0"
+        },
+        {
+          "needed": [
+            "libicuuc.so.78",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libpsl.so.5"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libnghttp2.so.14"
+        },
+        {
+          "needed": [
+            "libblkid.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libmount.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libevdev.so.2"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libcap.so.2"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libffi.so.8"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libblkid.so.1"
+        }
+      ],
+      "unresolved": []
+    },
+    "/usr/libexec/wpe-webkit-2.0/WPENetworkProcess": {
+      "nodes": [
+        {
+          "needed": [
+            "libWPEWebKit-2.0.so.1",
+            "libfreetype.so.6",
+            "libfontconfig.so.1",
+            "libepoxy.so.0",
+            "libwebpmux.so.3",
+            "libwebp.so.7",
+            "libexpat.so.1",
+            "libharfbuzz.so.0",
+            "libjpeg.so.8",
+            "libpng16.so.16",
+            "libz.so.1",
+            "libgmodule-2.0.so.0",
+            "libglib-2.0.so.0",
+            "libsoup-3.0.so.0",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6"
+          ],
+          "path": "/usr/libexec/wpe-webkit-2.0/WPENetworkProcess"
+        },
+        {
+          "needed": [
+            "libgmodule-2.0.so.0",
+            "libsoup-3.0.so.0",
+            "libepoxy.so.0",
+            "libatomic.so.1",
+            "libgio-2.0.so.0",
+            "libinput.so.10",
+            "libudev.so.1",
+            "libxkbcommon.so.0",
+            "libfreetype.so.6",
+            "libfontconfig.so.1",
+            "libwebpmux.so.3",
+            "libexpat.so.1",
+            "libgobject-2.0.so.0",
+            "libglib-2.0.so.0",
+            "libsystemd.so.0",
+            "libicudata.so.78",
+            "libicui18n.so.78",
+            "libharfbuzz.so.0",
+            "libjpeg.so.8",
+            "libpng16.so.16",
+            "libgbm.so.1",
+            "libdrm.so.2",
+            "libicuuc.so.78",
+            "libxml2.so.16",
+            "libsqlite3.so.0",
+            "libxslt.so.1",
+            "libz.so.1",
+            "libharfbuzz-icu.so.0",
+            "libgcrypt.so.20",
+            "libgpg-error.so.0",
+            "libwebpdemux.so.2",
+            "libwebp.so.7",
+            "libtasn1.so.6",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libWPEWebKit-2.0.so.1"
+        },
+        {
+          "needed": [
+            "libpng16.so.16",
+            "libz.so.1",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libfreetype.so.6"
+        },
+        {
+          "needed": [
+            "libfreetype.so.6",
+            "libexpat.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libfontconfig.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libepoxy.so.0"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libwebp.so.7",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libwebpmux.so.3"
+        },
+        {
+          "needed": [
+            "libsharpyuv.so.0",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libwebp.so.7"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libexpat.so.1"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libfreetype.so.6",
+            "libglib-2.0.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libharfbuzz.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libjpeg.so.8"
+        },
+        {
+          "needed": [
+            "libz.so.1",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libpng16.so.16"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libz.so.1"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgmodule-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libpcre2-8.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libglib-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libgobject-2.0.so.0",
+            "libgio-2.0.so.0",
+            "libsqlite3.so.0",
+            "libpsl.so.5",
+            "libz.so.1",
+            "libnghttp2.so.14",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsoup-3.0.so.0"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libc.so.6",
+            "libgcc_s.so.1"
+          ],
+          "path": "/lib/libstdc++.so.6"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libm.so.6"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libgcc_s.so.1"
+        },
+        {
+          "needed": [
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libc.so.6"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libatomic.so.1"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libgobject-2.0.so.0",
+            "libgmodule-2.0.so.0",
+            "libz.so.1",
+            "libmount.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgio-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libudev.so.1",
+            "libevdev.so.2",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libinput.so.10"
+        },
+        {
+          "needed": [
+            "libcap.so.2",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libudev.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libxkbcommon.so.0"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libffi.so.8",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgobject-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libcap.so.2",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsystemd.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libicudata.so.78"
+        },
+        {
+          "needed": [
+            "libicuuc.so.78",
+            "libicudata.so.78",
+            "libatomic.so.1",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libicui18n.so.78"
+        },
+        {
+          "needed": [
+            "libdrm.so.2",
+            "libexpat.so.1",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgbm.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libdrm.so.2"
+        },
+        {
+          "needed": [
+            "libicudata.so.78",
+            "libatomic.so.1",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libicuuc.so.78"
+        },
+        {
+          "needed": [
+            "libz.so.1",
+            "libicuuc.so.78",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libxml2.so.16"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libz.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsqlite3.so.0"
+        },
+        {
+          "needed": [
+            "libxml2.so.16",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libxslt.so.1"
+        },
+        {
+          "needed": [
+            "libharfbuzz.so.0",
+            "libicuuc.so.78",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libharfbuzz-icu.so.0"
+        },
+        {
+          "needed": [
+            "libgpg-error.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgcrypt.so.20"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgpg-error.so.0"
+        },
+        {
+          "needed": [
+            "libwebp.so.7",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libwebpdemux.so.2"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libtasn1.so.6"
+        },
+        {
+          "needed": [],
+          "path": "/lib/ld-linux-aarch64.so.1"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsharpyuv.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libpcre2-8.so.0"
+        },
+        {
+          "needed": [
+            "libicuuc.so.78",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libpsl.so.5"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libnghttp2.so.14"
+        },
+        {
+          "needed": [
+            "libblkid.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libmount.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libevdev.so.2"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libcap.so.2"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libffi.so.8"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libblkid.so.1"
+        }
+      ],
+      "unresolved": []
+    },
+    "/usr/libexec/wpe-webkit-2.0/WPEWebProcess": {
+      "nodes": [
+        {
+          "needed": [
+            "libWPEWebKit-2.0.so.1",
+            "libfreetype.so.6",
+            "libfontconfig.so.1",
+            "libepoxy.so.0",
+            "libwebpmux.so.3",
+            "libwebp.so.7",
+            "libexpat.so.1",
+            "libharfbuzz.so.0",
+            "libjpeg.so.8",
+            "libpng16.so.16",
+            "libz.so.1",
+            "libgmodule-2.0.so.0",
+            "libglib-2.0.so.0",
+            "libsoup-3.0.so.0",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6"
+          ],
+          "path": "/usr/libexec/wpe-webkit-2.0/WPEWebProcess"
+        },
+        {
+          "needed": [
+            "libgmodule-2.0.so.0",
+            "libsoup-3.0.so.0",
+            "libepoxy.so.0",
+            "libatomic.so.1",
+            "libgio-2.0.so.0",
+            "libinput.so.10",
+            "libudev.so.1",
+            "libxkbcommon.so.0",
+            "libfreetype.so.6",
+            "libfontconfig.so.1",
+            "libwebpmux.so.3",
+            "libexpat.so.1",
+            "libgobject-2.0.so.0",
+            "libglib-2.0.so.0",
+            "libsystemd.so.0",
+            "libicudata.so.78",
+            "libicui18n.so.78",
+            "libharfbuzz.so.0",
+            "libjpeg.so.8",
+            "libpng16.so.16",
+            "libgbm.so.1",
+            "libdrm.so.2",
+            "libicuuc.so.78",
+            "libxml2.so.16",
+            "libsqlite3.so.0",
+            "libxslt.so.1",
+            "libz.so.1",
+            "libharfbuzz-icu.so.0",
+            "libgcrypt.so.20",
+            "libgpg-error.so.0",
+            "libwebpdemux.so.2",
+            "libwebp.so.7",
+            "libtasn1.so.6",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libWPEWebKit-2.0.so.1"
+        },
+        {
+          "needed": [
+            "libpng16.so.16",
+            "libz.so.1",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libfreetype.so.6"
+        },
+        {
+          "needed": [
+            "libfreetype.so.6",
+            "libexpat.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libfontconfig.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libepoxy.so.0"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libwebp.so.7",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libwebpmux.so.3"
+        },
+        {
+          "needed": [
+            "libsharpyuv.so.0",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libwebp.so.7"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libexpat.so.1"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libfreetype.so.6",
+            "libglib-2.0.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libharfbuzz.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libjpeg.so.8"
+        },
+        {
+          "needed": [
+            "libz.so.1",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libpng16.so.16"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libz.so.1"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgmodule-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libpcre2-8.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libglib-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libgobject-2.0.so.0",
+            "libgio-2.0.so.0",
+            "libsqlite3.so.0",
+            "libpsl.so.5",
+            "libz.so.1",
+            "libnghttp2.so.14",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsoup-3.0.so.0"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libc.so.6",
+            "libgcc_s.so.1"
+          ],
+          "path": "/lib/libstdc++.so.6"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libm.so.6"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libgcc_s.so.1"
+        },
+        {
+          "needed": [
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libc.so.6"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libatomic.so.1"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libgobject-2.0.so.0",
+            "libgmodule-2.0.so.0",
+            "libz.so.1",
+            "libmount.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgio-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libudev.so.1",
+            "libevdev.so.2",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libinput.so.10"
+        },
+        {
+          "needed": [
+            "libcap.so.2",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libudev.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libxkbcommon.so.0"
+        },
+        {
+          "needed": [
+            "libglib-2.0.so.0",
+            "libffi.so.8",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgobject-2.0.so.0"
+        },
+        {
+          "needed": [
+            "libcap.so.2",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsystemd.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6"
+          ],
+          "path": "/lib/libicudata.so.78"
+        },
+        {
+          "needed": [
+            "libicuuc.so.78",
+            "libicudata.so.78",
+            "libatomic.so.1",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libicui18n.so.78"
+        },
+        {
+          "needed": [
+            "libdrm.so.2",
+            "libexpat.so.1",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgbm.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libdrm.so.2"
+        },
+        {
+          "needed": [
+            "libicudata.so.78",
+            "libatomic.so.1",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libicuuc.so.78"
+        },
+        {
+          "needed": [
+            "libz.so.1",
+            "libicuuc.so.78",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libxml2.so.16"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libz.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsqlite3.so.0"
+        },
+        {
+          "needed": [
+            "libxml2.so.16",
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libxslt.so.1"
+        },
+        {
+          "needed": [
+            "libharfbuzz.so.0",
+            "libicuuc.so.78",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libharfbuzz-icu.so.0"
+        },
+        {
+          "needed": [
+            "libgpg-error.so.0",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgcrypt.so.20"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libgpg-error.so.0"
+        },
+        {
+          "needed": [
+            "libwebp.so.7",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libwebpdemux.so.2"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libtasn1.so.6"
+        },
+        {
+          "needed": [],
+          "path": "/lib/ld-linux-aarch64.so.1"
+        },
+        {
+          "needed": [
+            "libm.so.6",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libsharpyuv.so.0"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libpcre2-8.so.0"
+        },
+        {
+          "needed": [
+            "libicuuc.so.78",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libpsl.so.5"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libnghttp2.so.14"
+        },
+        {
+          "needed": [
+            "libblkid.so.1",
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libmount.so.1"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libevdev.so.2"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libcap.so.2"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libffi.so.8"
+        },
+        {
+          "needed": [
+            "libc.so.6",
+            "ld-linux-aarch64.so.1"
+          ],
+          "path": "/lib/libblkid.so.1"
+        }
+      ],
+      "unresolved": []
+    }
+  },
+  "embedded_initramfs_compression": [
+    "gzip"
+  ],
+  "git_commit": "8c0c70e13d58b5645227b07dd1f622ff56d2e792",
+  "images": {
+    "Image": {
+      "bytes": 154601984,
+      "sha256": "b82313ec01b61416da269e238bd98eb6c4e8130bcd34ca1223f81442d915818e"
+    },
+    "boot.vfat": {
+      "bytes": 201326592,
+      "sha256": "618d4b17e3e2d109759f998623ba2194adda7ff6b94007d0e4ec9876ccdb5826"
+    },
+    "rootfs.cpio": {
+      "bytes": 248381952,
+      "sha256": "6e71e04ead76846a6b5bb77503ee78d26500c4cbf4791979ca17b2ccd471951a"
+    },
+    "sdcard.img": {
+      "bytes": 201327104,
+      "sha256": "16521229957366b6fc4643875d7218a05775af1efb2421474eda04fabb7112ff"
+    }
+  },
+  "kernel_config_y_count": 3760,
+  "kernel_module_file_count": 0,
+  "kernel_selected_settings": {
+    "CONFIG_INITRAMFS_COMPRESSION_GZIP": "y",
+    "CONFIG_KERNEL_MODE_NEON": "y",
+    "CONFIG_RD_BZIP2": "y",
+    "CONFIG_RD_GZIP": "y",
+    "CONFIG_RD_LZ4": "y",
+    "CONFIG_RD_LZMA": "y",
+    "CONFIG_RD_LZO": "y",
+    "CONFIG_RD_XZ": "y",
+    "CONFIG_RD_ZSTD": "y"
+  },
+  "largest_elf_files": [
+    {
+      "bss": 327976,
+      "data": 3308388,
+      "file_bytes": 110474656,
+      "path": "/usr/lib/libWPEWebKit-2.0.so.1.9.9",
+      "text": 107160013,
+      "total": 110796377
+    },
+    {
+      "bss": 8,
+      "data": 632,
+      "file_bytes": 33113728,
+      "path": "/usr/lib/libicudata.so.78.2",
+      "text": 33108427,
+      "total": 33109067
+    },
+    {
+      "bss": 199208,
+      "data": 492846,
+      "file_bytes": 17920704,
+      "path": "/usr/lib/libgallium-26.1.2.so",
+      "text": 17422467,
+      "total": 18114521
+    },
+    {
+      "bss": 3568,
+      "data": 255208,
+      "file_bytes": 4177568,
+      "path": "/usr/lib/systemd/libsystemd-shared-258.so",
+      "text": 3917180,
+      "total": 4175956
+    },
+    {
+      "bss": 4712,
+      "data": 80552,
+      "file_bytes": 3799296,
+      "path": "/usr/lib/libicui18n.so.78.2",
+      "text": 3713670,
+      "total": 3798934
+    },
+    {
+      "bss": 32,
+      "data": 446328,
+      "file_bytes": 2399928,
+      "path": "/usr/lib/systemd/libsystemd-core-258.so",
+      "text": 1949090,
+      "total": 2395450
+    },
+    {
+      "bss": 18600,
+      "data": 53416,
+      "file_bytes": 2386792,
+      "path": "/usr/lib/libstdc++.so.6.0.33",
+      "text": 2328139,
+      "total": 2400155
+    },
+    {
+      "bss": 9080,
+      "data": 76768,
+      "file_bytes": 2242400,
+      "path": "/usr/lib/libicuuc.so.78.2",
+      "text": 2162107,
+      "total": 2247955
+    },
+    {
+      "bss": 7824,
+      "data": 33696,
+      "file_bytes": 2112784,
+      "path": "/usr/lib/libgio-2.0.so.0.8600.5",
+      "text": 2072976,
+      "total": 2114496
+    },
+    {
+      "bss": 20,
+      "data": 436144,
+      "file_bytes": 1993408,
+      "path": "/usr/lib/systemd/systemd-networkd",
+      "text": 1554128,
+      "total": 1990292
+    },
+    {
+      "bss": 3224,
+      "data": 52269,
+      "file_bytes": 1933136,
+      "path": "/usr/lib/libsystemd.so.0.41.0",
+      "text": 1874969,
+      "total": 1930462
+    },
+    {
+      "bss": 2768,
+      "data": 67072,
+      "file_bytes": 1818872,
+      "path": "/usr/lib/libnss_systemd.so.2",
+      "text": 1746266,
+      "total": 1816106
+    },
+    {
+      "bss": 2440,
+      "data": 37376,
+      "file_bytes": 1717184,
+      "path": "/usr/bin/sqlite3",
+      "text": 1674447,
+      "total": 1714263
+    },
+    {
+      "bss": 2440,
+      "data": 54364,
+      "file_bytes": 1638568,
+      "path": "/usr/lib/libnss_myhostname.so.2",
+      "text": 1579818,
+      "total": 1636622
+    },
+    {
+      "bss": 51816,
+      "data": 17760,
+      "file_bytes": 1613984,
+      "path": "/usr/lib/libc.so.6",
+      "text": 1588622,
+      "total": 1658198
+    },
+    {
+      "bss": 2864,
+      "data": 5184,
+      "file_bytes": 1424632,
+      "path": "/usr/lib/libglib-2.0.so.0.8600.5",
+      "text": 1413840,
+      "total": 1421888
+    },
+    {
+      "bss": 664,
+      "data": 1576,
+      "file_bytes": 1386320,
+      "path": "/usr/lib/libharfbuzz-subset.so.0.61421.0",
+      "text": 1381170,
+      "total": 1383410
+    },
+    {
+      "bss": 55768,
+      "data": 84608,
+      "file_bytes": 1347056,
+      "path": "/usr/bin/WPEWebDriver",
+      "text": 1258428,
+      "total": 1398804
+    },
+    {
+      "bss": 856,
+      "data": 6216,
+      "file_bytes": 1339104,
+      "path": "/usr/lib/libharfbuzz.so.0.61421.0",
+      "text": 1328797,
+      "total": 1335869
+    },
+    {
+      "bss": 120,
+      "data": 55480,
+      "file_bytes": 1315160,
+      "path": "/usr/lib/libepoxy.so.0.0.0",
+      "text": 1257501,
+      "total": 1313101
+    },
+    {
+      "bss": 2424,
+      "data": 44249,
+      "file_bytes": 1269760,
+      "path": "/usr/lib/libudev.so.1.7.11",
+      "text": 1222572,
+      "total": 1269245
+    },
+    {
+      "bss": 3960,
+      "data": 37116,
+      "file_bytes": 1260128,
+      "path": "/usr/lib/libxml2.so.16.1.3",
+      "text": 1220453,
+      "total": 1261529
+    },
+    {
+      "bss": 1496,
+      "data": 39673,
+      "file_bytes": 1206000,
+      "path": "/usr/lib/libgcrypt.so.20.7.2",
+      "text": 1162654,
+      "total": 1203823
+    },
+    {
+      "bss": 1584,
+      "data": 27120,
+      "file_bytes": 1094544,
+      "path": "/usr/lib/libsqlite3.so.3.53.2",
+      "text": 1062402,
+      "total": 1091106
+    },
+    {
+      "bss": 2416,
+      "data": 28813,
+      "file_bytes": 1080968,
+      "path": "/usr/lib/libnss_resolve.so.2",
+      "text": 1046022,
+      "total": 1077251
+    },
+    {
+      "bss": 1560,
+      "data": 12329,
+      "file_bytes": 862656,
+      "path": "/usr/bin/busybox",
+      "text": 846398,
+      "total": 860287
+    },
+    {
+      "bss": 3824,
+      "data": 41600,
+      "file_bytes": 793496,
+      "path": "/usr/bin/rsyslogd",
+      "text": 748540,
+      "total": 793964
+    },
+    {
+      "bss": 552,
+      "data": 135008,
+      "file_bytes": 732896,
+      "path": "/usr/bin/udevadm",
+      "text": 593188,
+      "total": 728748
+    },
+    {
+      "bss": 8,
+      "data": 26744,
+      "file_bytes": 714448,
+      "path": "/usr/lib/libfreetype.so.6.20.6",
+      "text": 681626,
+      "total": 708378
+    },
+    {
+      "bss": 3032,
+      "data": 16488,
+      "file_bytes": 641336,
+      "path": "/usr/lib/libsoup-3.0.so.0.7.4",
+      "text": 620266,
+      "total": 639786
+    },
+    {
+      "bss": 24,
+      "data": 3812,
+      "file_bytes": 620792,
+      "path": "/usr/lib/libturbojpeg.so.0.4.0",
+      "text": 614589,
+      "total": 618425
+    },
+    {
+      "bss": 96,
+      "data": 20168,
+      "file_bytes": 616232,
+      "path": "/usr/lib/libcec.so.7.1.1",
+      "text": 591130,
+      "total": 611394
+    },
+    {
+      "bss": 72,
+      "data": 22464,
+      "file_bytes": 604392,
+      "path": "/usr/lib/systemd/systemd-resolved",
+      "text": 576392,
+      "total": 598928
+    },
+    {
+      "bss": 12,
+      "data": 812,
+      "file_bytes": 575344,
+      "path": "/usr/lib/libm.so.6",
+      "text": 571495,
+      "total": 572319
+    },
+    {
+      "bss": 8,
+      "data": 3612,
+      "file_bytes": 493416,
+      "path": "/usr/lib/libjpeg.so.8.3.2",
+      "text": 484050,
+      "total": 487670
+    },
+    {
+      "bss": 38,
+      "data": 10016,
+      "file_bytes": 469448,
+      "path": "/usr/lib/libmount.so.1.1.0",
+      "text": 454193,
+      "total": 464247
+    },
+    {
+      "bss": 2920,
+      "data": 12328,
+      "file_bytes": 425528,
+      "path": "/usr/lib/libgobject-2.0.so.0.8600.5",
+      "text": 409479,
+      "total": 424727
+    },
+    {
+      "bss": 24,
+      "data": 6192,
+      "file_bytes": 404864,
+      "path": "/usr/lib/libinput.so.10.13.0",
+      "text": 395057,
+      "total": 401273
+    },
+    {
+      "bss": 46,
+      "data": 23840,
+      "file_bytes": 400104,
+      "path": "/usr/lib/libblkid.so.1.1.0",
+      "text": 372819,
+      "total": 396705
+    },
+    {
+      "bss": 8,
+      "data": 1728,
+      "file_bytes": 399360,
+      "path": "/usr/lib/libpcre2-8.so.0.15.0",
+      "text": 393533,
+      "total": 395269
+    },
+    {
+      "bss": 464,
+      "data": 5968,
+      "file_bytes": 358320,
+      "path": "/usr/lib/libdbus-1.so.3.32.4",
+      "text": 348712,
+      "total": 355144
+    },
+    {
+      "bss": 4480,
+      "data": 2368,
+      "file_bytes": 337816,
+      "path": "/usr/lib/libwebp.so.7.2.0",
+      "text": 329253,
+      "total": 336101
+    },
+    {
+      "bss": 8,
+      "data": 5344,
+      "file_bytes": 325408,
+      "path": "/usr/lib/libxkbcommon.so.0.9.2",
+      "text": 315579,
+      "total": 320931
+    },
+    {
+      "bss": 552,
+      "data": 6312,
+      "file_bytes": 321240,
+      "path": "/usr/lib/libfontconfig.so.1.16.0",
+      "text": 312610,
+      "total": 319474
+    },
+    {
+      "bss": 888,
+      "data": 3016,
+      "file_bytes": 302440,
+      "path": "/usr/lib/libgomp.so.1.0.0",
+      "text": 295903,
+      "total": 299807
+    },
+    {
+      "bss": 304,
+      "data": 16616,
+      "file_bytes": 289960,
+      "path": "/usr/bin/systemctl",
+      "text": 268244,
+      "total": 285164
+    },
+    {
+      "bss": 96,
+      "data": 44080,
+      "file_bytes": 280728,
+      "path": "/usr/lib/libEGL.so.1.0.0",
+      "text": 232079,
+      "total": 276255
+    },
+    {
+      "bss": 288,
+      "data": 3664,
+      "file_bytes": 256632,
+      "path": "/usr/lib/libgirepository-2.0.so.0.8600.5",
+      "text": 247267,
+      "total": 251219
+    },
+    {
+      "bss": 128,
+      "data": 16752,
+      "file_bytes": 248016,
+      "path": "/usr/bin/resolvectl",
+      "text": 228538,
+      "total": 245418
+    },
+    {
+      "bss": 1144,
+      "data": 4224,
+      "file_bytes": 247656,
+      "path": "/usr/lib/libxslt.so.1.1.45",
+      "text": 238257,
+      "total": 243625
+    }
+  ],
+  "largest_target_files": [
+    {
+      "bytes": 110474656,
+      "path": "/usr/lib/libWPEWebKit-2.0.so.1.9.9"
+    },
+    {
+      "bytes": 33113728,
+      "path": "/usr/lib/libicudata.so.78.2"
+    },
+    {
+      "bytes": 17920704,
+      "path": "/usr/lib/libgallium-26.1.2.so"
+    },
+    {
+      "bytes": 13521815,
+      "path": "/usr/lib/udev/hwdb.bin"
+    },
+    {
+      "bytes": 4177568,
+      "path": "/usr/lib/systemd/libsystemd-shared-258.so"
+    },
+    {
+      "bytes": 4132304,
+      "path": "/usr/lib/udev/hwdb.d/20-pci-vendor-model.hwdb"
+    },
+    {
+      "bytes": 3799296,
+      "path": "/usr/lib/libicui18n.so.78.2"
+    },
+    {
+      "bytes": 3051337,
+      "path": "/usr/lib/udev/hwdb.d/20-OUI.hwdb"
+    },
+    {
+      "bytes": 2399928,
+      "path": "/usr/lib/systemd/libsystemd-core-258.so"
+    },
+    {
+      "bytes": 2386792,
+      "path": "/usr/lib/libstdc++.so.6.0.33"
+    },
+    {
+      "bytes": 2242400,
+      "path": "/usr/lib/libicuuc.so.78.2"
+    },
+    {
+      "bytes": 2112784,
+      "path": "/usr/lib/libgio-2.0.so.0.8600.5"
+    },
+    {
+      "bytes": 1993408,
+      "path": "/usr/lib/systemd/systemd-networkd"
+    },
+    {
+      "bytes": 1933136,
+      "path": "/usr/lib/libsystemd.so.0.41.0"
+    },
+    {
+      "bytes": 1818872,
+      "path": "/usr/lib/libnss_systemd.so.2"
+    },
+    {
+      "bytes": 1717184,
+      "path": "/usr/bin/sqlite3"
+    },
+    {
+      "bytes": 1638568,
+      "path": "/usr/lib/libnss_myhostname.so.2"
+    },
+    {
+      "bytes": 1613984,
+      "path": "/usr/lib/libc.so.6"
+    },
+    {
+      "bytes": 1500058,
+      "path": "/usr/lib/udev/hwdb.d/20-usb-vendor-model.hwdb"
+    },
+    {
+      "bytes": 1424632,
+      "path": "/usr/lib/libglib-2.0.so.0.8600.5"
+    },
+    {
+      "bytes": 1386320,
+      "path": "/usr/lib/libharfbuzz-subset.so.0.61421.0"
+    },
+    {
+      "bytes": 1375117,
+      "path": "/usr/share/wpe-webkit-2.0/inspector.gresource"
+    },
+    {
+      "bytes": 1347056,
+      "path": "/usr/bin/WPEWebDriver"
+    },
+    {
+      "bytes": 1339104,
+      "path": "/usr/lib/libharfbuzz.so.0.61421.0"
+    },
+    {
+      "bytes": 1315160,
+      "path": "/usr/lib/libepoxy.so.0.0.0"
+    },
+    {
+      "bytes": 1269760,
+      "path": "/usr/lib/libudev.so.1.7.11"
+    },
+    {
+      "bytes": 1260128,
+      "path": "/usr/lib/libxml2.so.16.1.3"
+    },
+    {
+      "bytes": 1206000,
+      "path": "/usr/lib/libgcrypt.so.20.7.2"
+    },
+    {
+      "bytes": 1094544,
+      "path": "/usr/lib/libsqlite3.so.3.53.2"
+    },
+    {
+      "bytes": 1080968,
+      "path": "/usr/lib/libnss_resolve.so.2"
+    },
+    {
+      "bytes": 862656,
+      "path": "/usr/bin/busybox"
+    },
+    {
+      "bytes": 793496,
+      "path": "/usr/bin/rsyslogd"
+    },
+    {
+      "bytes": 757076,
+      "path": "/usr/share/fonts/dejavu/DejaVuSans.ttf"
+    },
+    {
+      "bytes": 732896,
+      "path": "/usr/bin/udevadm"
+    },
+    {
+      "bytes": 714448,
+      "path": "/usr/lib/libfreetype.so.6.20.6"
+    },
+    {
+      "bytes": 705684,
+      "path": "/usr/share/fonts/dejavu/DejaVuSans-Bold.ttf"
+    },
+    {
+      "bytes": 643292,
+      "path": "/usr/share/fonts/dejavu/DejaVuSans-BoldOblique.ttf"
+    },
+    {
+      "bytes": 641336,
+      "path": "/usr/lib/libsoup-3.0.so.0.7.4"
+    },
+    {
+      "bytes": 635416,
+      "path": "/usr/share/fonts/dejavu/DejaVuSans-Oblique.ttf"
+    },
+    {
+      "bytes": 620792,
+      "path": "/usr/lib/libturbojpeg.so.0.4.0"
+    },
+    {
+      "bytes": 616232,
+      "path": "/usr/lib/libcec.so.7.1.1"
+    },
+    {
+      "bytes": 604392,
+      "path": "/usr/lib/systemd/systemd-resolved"
+    },
+    {
+      "bytes": 575344,
+      "path": "/usr/lib/libm.so.6"
+    },
+    {
+      "bytes": 493416,
+      "path": "/usr/lib/libjpeg.so.8.3.2"
+    },
+    {
+      "bytes": 469448,
+      "path": "/usr/lib/libmount.so.1.1.0"
+    },
+    {
+      "bytes": 425528,
+      "path": "/usr/lib/libgobject-2.0.so.0.8600.5"
+    },
+    {
+      "bytes": 404864,
+      "path": "/usr/lib/libinput.so.10.13.0"
+    },
+    {
+      "bytes": 400104,
+      "path": "/usr/lib/libblkid.so.1.1.0"
+    },
+    {
+      "bytes": 399360,
+      "path": "/usr/lib/libpcre2-8.so.0.15.0"
+    },
+    {
+      "bytes": 358320,
+      "path": "/usr/lib/libdbus-1.so.3.32.4"
+    }
+  ],
+  "linux_commit": "21b410140c47ffab5668399f6f143c7d7b935c8b",
+  "package_sizes": [
+    {
+      "bytes": 113220253,
+      "package": "dashboard-pi-wpewebkit",
+      "system_percent": 44.0
+    },
+    {
+      "bytes": 39640552,
+      "package": "icu",
+      "system_percent": 15.4
+    },
+    {
+      "bytes": 30920564,
+      "package": "systemd",
+      "system_percent": 12.0
+    },
+    {
+      "bytes": 18441436,
+      "package": "mesa3d",
+      "system_percent": 7.2
+    },
+    {
+      "bytes": 13738548,
+      "package": "unknown",
+      "system_percent": 5.3
+    },
+    {
+      "bytes": 5638546,
+      "package": "toolchain-external-bootlin",
+      "system_percent": 2.2
+    },
+    {
+      "bytes": 4737362,
+      "package": "libglib2",
+      "system_percent": 1.8
+    },
+    {
+      "bytes": 3479256,
+      "package": "harfbuzz",
+      "system_percent": 1.4
+    },
+    {
+      "bytes": 3099715,
+      "package": "dejavu",
+      "system_percent": 1.2
+    },
+    {
+      "bytes": 2811728,
+      "package": "sqlite",
+      "system_percent": 1.1
+    },
+    {
+      "bytes": 2440236,
+      "package": "kbd",
+      "system_percent": 0.9
+    },
+    {
+      "bytes": 1631308,
+      "package": "rsyslog",
+      "system_percent": 0.6
+    },
+    {
+      "bytes": 1353968,
+      "package": "libxml2",
+      "system_percent": 0.5
+    },
+    {
+      "bytes": 1315160,
+      "package": "libepoxy",
+      "system_percent": 0.5
+    },
+    {
+      "bytes": 1288247,
+      "package": "libinput",
+      "system_percent": 0.5
+    },
+    {
+      "bytes": 1252824,
+      "package": "libgcrypt",
+      "system_percent": 0.5
+    },
+    {
+      "bytes": 1114208,
+      "package": "jpeg-turbo",
+      "system_percent": 0.4
+    },
+    {
+      "bytes": 1039131,
+      "package": "tzdata",
+      "system_percent": 0.4
+    },
+    {
+      "bytes": 900112,
+      "package": "util-linux-libs",
+      "system_percent": 0.3
+    },
+    {
+      "bytes": 865789,
+      "package": "busybox",
+      "system_percent": 0.3
+    },
+    {
+      "bytes": 802860,
+      "package": "dbus",
+      "system_percent": 0.3
+    },
+    {
+      "bytes": 717563,
+      "package": "libcec",
+      "system_percent": 0.3
+    },
+    {
+      "bytes": 714448,
+      "package": "freetype",
+      "system_percent": 0.3
+    },
+    {
+      "bytes": 641336,
+      "package": "libsoup3",
+      "system_percent": 0.2
+    },
+    {
+      "bytes": 603832,
+      "package": "pcre2",
+      "system_percent": 0.2
+    },
+    {
+      "bytes": 602208,
+      "package": "webp",
+      "system_percent": 0.2
+    },
+    {
+      "bytes": 578039,
+      "package": "fontconfig",
+      "system_percent": 0.2
+    },
+    {
+      "bytes": 367096,
+      "package": "util-linux",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 362065,
+      "package": "libxslt",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 336019,
+      "package": "xz",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 325408,
+      "package": "libxkbcommon",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 266152,
+      "package": "kmod",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 225281,
+      "package": "libgpg-error",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 216590,
+      "package": "ca-certificates",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 210720,
+      "package": "libpng",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 210720,
+      "package": "libxcrypt",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 182040,
+      "package": "nghttp2",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 161488,
+      "package": "expat",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 159376,
+      "package": "libevdev",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 136584,
+      "package": "shared-mime-info",
+      "system_percent": 0.1
+    },
+    {
+      "bytes": 112275,
+      "package": "libpsl",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 96064,
+      "package": "libdrm",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 87840,
+      "package": "libzlib",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 79648,
+      "package": "libtasn1",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 60952,
+      "package": "libcap",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 49488,
+      "package": "libplatform",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 47216,
+      "package": "libfastjson",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 38752,
+      "package": "libffi",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 24048,
+      "package": "liblogging",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 16062,
+      "package": "skeleton-init-common",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 13952,
+      "package": "libestr",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 10016,
+      "package": "dashboard-pi-launcher",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 8140,
+      "package": "dashboard-pi-runtime",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 307,
+      "package": "toolchain",
+      "system_percent": 0.0
+    },
+    {
+      "bytes": 24,
+      "package": "skeleton-init-systemd",
+      "system_percent": 0.0
+    }
+  ],
+  "rootfs_cpio_encoding": "uncompressed-svr4-cpio",
+  "runtime_observation": {
+    "dlopen_libraries": [],
+    "gstreamer_plugins": [],
+    "status": "requires execution on Raspberry Pi 4 hardware"
+  },
+  "schema_version": 1,
+  "vmlinux_sections": {
+    "bss": 1166480,
+    "data": 114194319,
+    "text": 40220756,
+    "total": 155581555
+  },
+  "wpe_webkit_version": "2.52.5"
+}
