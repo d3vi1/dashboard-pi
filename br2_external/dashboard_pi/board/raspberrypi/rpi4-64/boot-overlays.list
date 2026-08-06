@@ -1,0 +1,7 @@
+# Overlays referenced by config.txt.
+disable-bt
+vc4-kms-v3d-pi4
+
+# A PoE HAT EEPROM may request either overlay by name.
+rpi-poe
+rpi-poe-plus
