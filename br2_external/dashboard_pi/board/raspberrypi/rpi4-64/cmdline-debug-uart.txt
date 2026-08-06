@@ -1,1 +1,1 @@
-console=tty1 console=ttyAMA0,115200 earlycon=pl011,mmio32,0xfe201000 loglevel=7 printk.time=1 root=/dev/ram0 ro systemd.unit=dashboard.target systemd.log_level=debug
+console=ttyAMA0,115200 earlycon=pl011,mmio32,0xfe201000 loglevel=7 printk.time=1 root=/dev/ram0 ro systemd.unit=dashboard.target systemd.log_level=debug
