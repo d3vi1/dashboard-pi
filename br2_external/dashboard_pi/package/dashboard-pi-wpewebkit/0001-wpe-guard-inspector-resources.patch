@@ -1,0 +1,37 @@
+From: Dashboard Pi contributors
+Subject: [PATCH] WPE: guard inspector resources when UI is disabled
+
+Source/CMakeLists.txt does not create the WebInspectorUI target when
+ENABLE_WEBINSPECTORUI is false. Avoid retaining a file dependency with that
+target name, and do not install the resource bundle in that configuration.
+
+---
+ Source/WebKit/PlatformWPE.cmake | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/Source/WebKit/PlatformWPE.cmake b/Source/WebKit/PlatformWPE.cmake
+index 000000000000..111111111111 100644
+--- a/Source/WebKit/PlatformWPE.cmake
++++ b/Source/WebKit/PlatformWPE.cmake
+@@ -588,12 +588,14 @@ if (ENABLE_BREAKPAD)
+     )
+ endif ()
+ 
+-WEBKIT_BUILD_INSPECTOR_GRESOURCES(
+-    "${WebInspectorUI_DERIVED_SOURCES_DIR}"
+-    "${CMAKE_BINARY_DIR}/share/inspector.gresource"
+-)
++if (ENABLE_WEBINSPECTORUI)
++    WEBKIT_BUILD_INSPECTOR_GRESOURCES(
++        "${WebInspectorUI_DERIVED_SOURCES_DIR}"
++        "${CMAKE_BINARY_DIR}/share/inspector.gresource"
++    )
+ 
+-install(FILES "${CMAKE_BINARY_DIR}/share/inspector.gresource" DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/wpe-webkit-${WPE_API_VERSION}")
++    install(FILES "${CMAKE_BINARY_DIR}/share/inspector.gresource" DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/wpe-webkit-${WPE_API_VERSION}")
++endif ()
+ 
+ add_library(WPEInjectedBundle MODULE "${WEBKIT_DIR}/WebProcess/InjectedBundle/API/glib/WebKitInjectedBundleMain.cpp")
+ ADD_WEBKIT_PREFIX_HEADER(WPEInjectedBundle)
+--
+2.39.5
