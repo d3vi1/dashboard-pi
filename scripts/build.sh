@@ -33,6 +33,12 @@ ln -s "$repo_root/br2_external/dashboard_pi" "$external_link"
 output_dir="$output_base/$defconfig"
 make -C "$buildroot_dir" BR2_EXTERNAL="$external_link" O="$output_dir" "$defconfig"
 make -C "$output_dir"
+make -C "$output_dir" graph-size
+python3 "$repo_root/scripts/artifact-metrics.py" \
+	--output-dir "$output_dir" \
+	--git-commit "$(git -C "$repo_root" rev-parse HEAD)" \
+	--buildroot-version "$buildroot_version"
 
 printf '\nBuild output: %s\n' "$output_dir"
 printf 'Image: %s/images/sdcard.img\n' "$output_dir"
+printf 'Metrics: %s/images/artifact-metrics.json\n' "$output_dir"
