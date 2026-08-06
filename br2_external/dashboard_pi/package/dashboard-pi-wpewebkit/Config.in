@@ -62,8 +62,8 @@ config BR2_PACKAGE_DASHBOARD_PI_WPEWEBKIT
 	select BR2_PACKAGE_WEBP_MUX
 	help
 	  Build the pinned WPE WebKit release used by Dashboard Pi.
-	  It includes WPEPlatform DRM/KMS and headless implementations,
-	  plus the production multimedia stack with GStreamer GL and ALSA.
+	  It includes the WPEPlatform DRM/KMS implementation and the
+	  production multimedia stack with GStreamer GL and ALSA.
 	  The legacy libwpe API, wpebackend-fdo, Wayland display backend
 	  and Cog are disabled.
 
