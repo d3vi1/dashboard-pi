@@ -10,7 +10,7 @@ DASHBOARD_PI_RUNTIME_SITE_METHOD = local
 DASHBOARD_PI_RUNTIME_LICENSE = GPL-2.0-only
 DASHBOARD_PI_RUNTIME_LICENSE_FILES = LICENSE
 
-DASHBOARD_PI_RUNTIME_USERS = dashboard -1 dashboard -1 * - - video,input,render Dashboard Pi browser user
+DASHBOARD_PI_RUNTIME_USERS = dashboard -1 dashboard -1 * - - audio,video,input,render Dashboard Pi browser user
 
 define DASHBOARD_PI_RUNTIME_INSTALL_TARGET_CMDS
 	cp -a $(DASHBOARD_PI_RUNTIME_PKGDIR)/rootfs-overlay/. $(TARGET_DIR)/

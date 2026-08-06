@@ -18,7 +18,8 @@ DASHBOARD_PI_WPEWEBKIT_DEPENDENCIES = \
 	host-gperf host-python3 host-ruby host-unifdef \
 	fontconfig freetype harfbuzz icu jpeg libepoxy libgcrypt libgles \
 	libinput libpng libsoup3 libtasn1 libdrm libgbm libxkbcommon libxslt \
-	systemd webp
+	gstreamer1 gst1-libav gst1-plugins-bad gst1-plugins-base \
+	gst1-plugins-good systemd webp
 
 DASHBOARD_PI_WPEWEBKIT_CMAKE_BACKEND = ninja
 DASHBOARD_PI_WPEWEBKIT_CONF_ENV = WK_USE_CCACHE=NO
@@ -33,9 +34,10 @@ DASHBOARD_PI_WPEWEBKIT_CONF_OPTS = \
 	-DENABLE_JOURNALD_LOG=ON \
 	-DENABLE_MINIBROWSER=OFF \
 	-DENABLE_SPEECH_SYNTHESIS=OFF \
-	-DENABLE_VIDEO=OFF \
-	-DENABLE_WEB_AUDIO=OFF \
-	-DENABLE_WEB_CODECS=OFF \
+	-DENABLE_MEDIA_SOURCE=ON \
+	-DENABLE_VIDEO=ON \
+	-DENABLE_WEB_AUDIO=ON \
+	-DENABLE_WEB_CODECS=ON \
 	-DENABLE_WEB_RTC=OFF \
 	-DENABLE_WPE_1_1_API=OFF \
 	-DENABLE_WPE_LEGACY_API=OFF \
@@ -48,8 +50,8 @@ DASHBOARD_PI_WPEWEBKIT_CONF_OPTS = \
 	-DUSE_AVIF=OFF \
 	-DUSE_FLITE=OFF \
 	-DUSE_GBM=ON \
-	-DUSE_GSTREAMER=OFF \
-	-DUSE_GSTREAMER_GL=OFF \
+	-DUSE_GSTREAMER=ON \
+	-DUSE_GSTREAMER_GL=ON \
 	-DUSE_JPEGXL=OFF \
 	-DUSE_LCMS=OFF \
 	-DUSE_LIBBACKTRACE=OFF \
