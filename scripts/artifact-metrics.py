@@ -116,7 +116,7 @@ def dependency_tree(target: Path, readelf: Path, root: Path) -> dict[str, Any]:
     for directory in (target / "lib", target / "usr/lib"):
         if directory.exists():
             for path in directory.rglob("*"):
-                if path.is_file() and not path.is_symlink():
+                if path.is_file():
                     libraries.setdefault(path.name, path)
 
     queue = [root]
@@ -218,6 +218,9 @@ def main() -> None:
         "WebKitGPUProcess",
         "NetworkProcess",
         "GPUProcess",
+        "WPEWebProcess",
+        "WPENetworkProcess",
+        "WPEGPUProcess",
     }
     for _, path in target_files:
         if path.name in requested_names:
