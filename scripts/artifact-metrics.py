@@ -43,6 +43,19 @@ def read_kernel_config(path: Path) -> tuple[dict[str, str], int]:
     return settings, enabled
 
 
+def read_cmake_cache(path: Path) -> dict[str, str]:
+    settings: dict[str, str] = {}
+    if not path.exists():
+        return settings
+    for line in path.read_text(errors="replace").splitlines():
+        if line.startswith(("//", "#")) or ":" not in line or "=" not in line:
+            continue
+        name_and_type, value = line.split("=", 1)
+        name, _ = name_and_type.split(":", 1)
+        settings[name] = value
+    return settings
+
+
 def selected_kernel_settings(settings: dict[str, str]) -> dict[str, str]:
     prefixes = ("CONFIG_INITRAMFS_COMPRESSION_", "CONFIG_KERNEL_", "CONFIG_RD_")
     return {
@@ -100,7 +113,13 @@ def elf_entries(target: Path, files: list[tuple[int, Path]], size_tool: Path) ->
         if sections:
             entry.update(sections)
         entries.append(entry)
-    return entries[:50]
+    return sorted(
+        entries,
+        key=lambda entry: (
+            -(entry.get("text", 0) + entry.get("data", 0)),
+            entry["path"],
+        ),
+    )[:50]
 
 
 def needed_libraries(readelf: Path, path: Path) -> list[str]:
@@ -203,6 +222,7 @@ def main() -> None:
     linux_match = re.search(r"linux,([0-9a-f]{40})", buildroot_config)
     wpe_builds = sorted((output_dir / "build").glob("dashboard-pi-wpewebkit-*"))
     wpe_version = wpe_builds[-1].name.removeprefix("dashboard-pi-wpewebkit-") if wpe_builds else "unknown"
+    wpe_cache = read_cmake_cache(wpe_builds[-1] / "CMakeCache.txt") if wpe_builds else {}
 
     size_tool = find_tool(host, "size")
     readelf = find_tool(host, "readelf")
@@ -237,16 +257,39 @@ def main() -> None:
         for key, value in kernel_settings.items()
         if key.startswith("CONFIG_INITRAMFS_COMPRESSION_") and value == "y"
     )
+    initramfs_blob = kernel_build / "usr/initramfs_inc_data"
+    embedded_initramfs = {
+        "compression_algorithms": initramfs_algorithms,
+        "bytes": initramfs_blob.stat().st_size,
+        "sha256": sha256(initramfs_blob),
+    }
+    raw_image_bytes = image_metrics["Image"]["bytes"]
+    image_excluding_archive_bytes = raw_image_bytes - embedded_initramfs["bytes"]
+    gstreamer_plugins = [
+        {
+            "path": "/" + str(path.relative_to(target)),
+            "bytes": path.stat().st_size,
+        }
+        for path in sorted((target / "usr/lib/gstreamer-1.0").glob("libgst*.so"))
+    ]
+    recorded_wpe_options = {
+        name: wpe_cache[name]
+        for name in sorted(wpe_cache)
+        if name.startswith(("ENABLE_", "USE_"))
+    }
 
     report = {
-        "schema_version": 1,
+        "schema_version": 2,
         "git_commit": args.git_commit,
         "buildroot_version": args.buildroot_version,
         "linux_commit": linux_match.group(1) if linux_match else "unknown",
         "wpe_webkit_version": wpe_version,
+        "wpe_build_options": recorded_wpe_options,
         "images": image_metrics,
         "rootfs_cpio_encoding": "uncompressed-svr4-cpio",
         "embedded_initramfs_compression": initramfs_algorithms,
+        "embedded_initramfs": embedded_initramfs,
+        "raw_image_excluding_embedded_archive_bytes": image_excluding_archive_bytes,
         "boot_fat": boot_metrics(mdir, images / "boot.vfat"),
         "vmlinux_sections": vmlinux_sections,
         "kernel_config_y_count": enabled_count,
@@ -259,6 +302,7 @@ def main() -> None:
             name: dependency_tree(target, readelf, path)
             for name, path in sorted(dependency_roots.items())
         },
+        "gstreamer_plugin_files": gstreamer_plugins,
         "runtime_observation": {
             "dlopen_libraries": [],
             "gstreamer_plugins": [],
