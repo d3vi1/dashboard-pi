@@ -26,8 +26,12 @@ files="${files}${kernel}
 "
 
 boot_files=$(printf '%s' "$files" | sed '/^$/d;s/.*/\t\t\t"&",/')
-sed "s|#BOOT_FILES#|${boot_files}|" \
-	"$board_dir/../common/genimage-boot-only.cfg.in" > "$genimage_cfg"
+while IFS= read -r line; do
+	case "$line" in
+	*'#BOOT_FILES#'*) printf '%s\n' "$boot_files" ;;
+	*) printf '%s\n' "$line" ;;
+	esac
+done < "$board_dir/../common/genimage-boot-only.cfg.in" > "$genimage_cfg"
 
 rm -rf "$genimage_tmp"
 genimage \
