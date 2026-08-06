@@ -18,6 +18,7 @@ output_base=${DASHBOARD_PI_OUTPUT_BASE:-"$cache_root/output"}
 external_link="$cache_root/br2_external_dashboard_pi"
 export BR2_CCACHE_DIR=${BR2_CCACHE_DIR:-"$cache_root/ccache"}
 export CCACHE_DIR=${CCACHE_DIR:-"$BR2_CCACHE_DIR"}
+export CCACHE_COMPILERCHECK=${CCACHE_COMPILERCHECK:-content}
 
 mkdir -p "$cache_root" "$output_base" "$BR2_CCACHE_DIR" "$CCACHE_DIR"
 
