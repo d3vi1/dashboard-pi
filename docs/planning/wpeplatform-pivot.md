@@ -50,9 +50,9 @@ Remaining work needs to validate:
 - the smallest systemd, udev, Mesa, libdrm, GBM, EGL, and certificate-store package set that supports the launcher;
 - the right way to expose render/card/input/CEC device access to a non-root dashboard user in an initramfs-only image.
 
-The current package enables the built-in DRM/KMS and headless backends and
-disables the WPE legacy API, backend-fdo dependency and Wayland display backend.
-Hardware validation remains open.
+The production package enables the DRM/KMS backend, GStreamer/GL multimedia and
+ALSA, while disabling headless, the WPE legacy API, backend-fdo dependency and
+Wayland display backend. Hardware validation remains open.
 
 ## Launcher Requirements
 

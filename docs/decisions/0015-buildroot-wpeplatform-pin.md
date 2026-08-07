@@ -21,14 +21,20 @@ The package must enable:
 
 - `ENABLE_WPE_PLATFORM=ON`;
 - `ENABLE_WPE_PLATFORM_DRM=ON`;
-- `ENABLE_WPE_PLATFORM_HEADLESS=ON` for CI and future renderer tests;
+- `ENABLE_WPE_PLATFORM_HEADLESS=OFF` in the production package;
 - `USE_LIBDRM=ON` and `USE_GBM=ON`.
+- `USE_GSTREAMER=ON` and `USE_GSTREAMER_GL=ON`.
 
 It must disable:
 
 - `ENABLE_WPE_LEGACY_API`;
 - the WPEPlatform Wayland display backend;
-- the Qt API, MiniBrowser, multimedia and WebRTC for the first appliance image.
+- the Qt API, MiniBrowser, PDFJS, WebDriver, Web Inspector UI and WebRTC.
+
+Multimedia is a product requirement, not a bring-up option. Video, Web Audio,
+WebCodecs and Media Source Extensions remain enabled. Buildroot 2026.05 lacks a
+Kconfig choice for GStreamer's direct EGL/GBM winsys, so the external tree adds
+that supported Meson configuration without pulling in X11 or Wayland.
 
 The Pi 4 defconfig must select this package and the project-owned C launcher.
 It must not select Buildroot's `wpewebkit`, `wpebackend-fdo` or Cog packages.
@@ -46,7 +52,8 @@ CI must:
 
 1. evaluate every defconfig for a Linux x86_64 host;
 2. assert that systemd and initramfs remain enabled;
-3. assert the Pi 4 WPEPlatform, EGL, GBM, GLES, libinput, CA and MIME symbols;
+3. assert the Pi 4 WPEPlatform, EGL, GBM, GLES, GStreamer/GL, ALSA, libinput,
+   CA and MIME symbols;
 4. reject enabled legacy WPE WebKit, backend-fdo and Cog symbols;
 5. download the WPE WebKit 2.52.5 source through Buildroot and verify its hash.
 

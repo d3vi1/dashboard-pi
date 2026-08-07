@@ -11,7 +11,7 @@
 - Buildroot:
 - Linux kernel:
 - Raspberry Pi firmware:
-- WPEPlatform/Thunder:
+- WPE WebKit/WPEPlatform:
 - Matter data model:
 - EEPROM state status:
 

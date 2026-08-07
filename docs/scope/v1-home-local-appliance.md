@@ -12,7 +12,7 @@ licensing server.
 V1 boots a minimal read-only Raspberry Pi image into an initramfs-only runtime.
 systemd starts the critical path, systemd-networkd acquires network
 configuration, DHCP may provide a dashboard URL and syslog server, and the
-dashboard is displayed through the WPEPlatform/Thunder runtime.
+dashboard is displayed by the project launcher through WPEPlatform DRM/KMS.
 
 Matter runs locally on the Raspberry Pi as a Matter node/server/end-device.
 HDMI-CEC navigation runs locally and is filtered through policy. The appliance

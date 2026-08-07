@@ -80,8 +80,9 @@ The graphics milestone must validate the real Raspberry Pi path, including:
 - Buildroot remains pinned to `2026.05`.
 - `dashboard-pi-wpewebkit` pins WPE WebKit `2.52.5` because Buildroot 2026.05
   and Buildroot master still package 2.50.5.
-- The package enables WPEPlatform DRM and headless backends and disables the
-  legacy API, Wayland display backend, Qt binding, MiniBrowser and multimedia.
+- The package enables only the WPEPlatform DRM display backend for production,
+  together with GStreamer/GL multimedia and ALSA HDMI audio. It disables the
+  headless and Wayland display backends, legacy API, Qt binding and MiniBrowser.
 - `dashboard-pi-launcher` links against `wpe-webkit-2.0` and
   `wpe-platform-2.0` and runs with `WPE_DISPLAY=wpe-display-drm`.
 - The Pi 4 image includes Mesa EGL/GBM/GLES, V3D, libdrm, libinput, one sans
@@ -92,6 +93,6 @@ See `0015-buildroot-wpeplatform-pin.md` for the package-version decision.
 ## Open Validation Items
 
 - Confirm whether Raspberry Pi 4 can use WPEPlatform directly on DRM/KMS/GBM without a compositor in the selected WebKit revision.
-- Confirm the C launcher against the cross-built 2.52.5 headers and libraries.
+- Validate the already cross-built C launcher on Pi 4 hardware.
 - Measure WPEPlatform launcher startup time against any temporary cog/libwpe baseline used during bring-up.
 - Decide whether any board release must temporarily ship a documented legacy fallback because WPEPlatform support is unavailable or unstable there.

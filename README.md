@@ -26,8 +26,11 @@ graphics/browser milestone:
   historical/experimental only.
 - The runtime uses systemd, systemd-networkd, volatile journald and initramfs.
 - Pi 4 builds pin WPE WebKit `2.52.5`, enable its WPEPlatform DRM/KMS backend,
-  and package a project-owned minimal launcher.
-- Cog/direct WPE launcher is not the default architecture.
+  package a project-owned minimal launcher, and include the GStreamer
+  multimedia path with direct EGL/GBM GL integration.
+- The Pi 4 kernel uses a project-owned appliance configuration with no modules,
+  VT or fbdev compatibility layer.
+- Cog and the legacy libwpe launcher architecture are not used.
 - Legacy `libwpe`, `wpebackend-fdo`, Cog, Weston and X11 are not in the Pi 4
   production browser path.
 - Cross-compilation and source integrity are CI-checked; Raspberry Pi hardware
@@ -48,6 +51,7 @@ graphics/browser milestone:
 | URL provisioning | DHCPv4 option 224 MVP, then vendor-specific DHCPv4/DHCPv6 |
 | Browser platform | WPE WebKit 2.52.5 WPEPlatform with a project launcher |
 | Graphics | Direct WPEPlatform DRM/KMS plus Mesa V3D on Pi 4, no compositor or X11 |
+| Multimedia | WPE GStreamer/GL, gst-libav, ALSA and VC4 HDMI audio |
 | Matter | Local Raspberry Pi Matter node/server; no V1 controller |
 | Matter persistence | Single small EEPROM boot config variable where supported |
 | CEC power policy | TV power control opt-in; dashboard-only by default |
@@ -117,9 +121,15 @@ Write the image to the target boot medium:
 sudo dd if=sdcard.img of=/dev/sdX bs=4M conv=fsync status=progress
 ```
 
-The image contains a minimal FAT boot partition. The runtime is embedded in the
-kernel initramfs, so there is no persistent rootfs partition to repair after
-power loss.
+The image contains one FAT boot partition and no rootfs partition. Its size is
+calculated from the boot payload with a 15 percent margin instead of being
+preallocated to a fixed nominal size. The runtime is a gzip-compressed initramfs
+embedded in the raw ARM64 `Image`, so there is no persistent root filesystem to
+repair after power loss.
+
+Pi 4 images carry only the overlays referenced by `config.txt` plus the PoE and
+PoE+ HAT overlays that firmware may request by name. The post-image build fails
+if the whitelist and FAT contents differ or a configured overlay is absent.
 
 ## DHCP Provisioning
 
@@ -145,9 +155,12 @@ Examples are in `docs/examples/dhcp/`.
 
 ## Debugging
 
-Serial console is disabled in the production Pi 4 cmdline. For UART debugging,
-copy `br2_external/dashboard_pi/board/raspberrypi/rpi4-64/cmdline-debug-uart.txt`
-over the production `cmdline.txt` path in a debug defconfig or local build.
+Serial console is disabled in both the production Pi 4 cmdline and production
+kernel. For UART debugging, apply
+`br2_external/dashboard_pi/board/raspberrypi/rpi4-64/linux-debug-uart.fragment`,
+add `enable_uart=1` to the debug firmware configuration and select
+`cmdline-debug-uart.txt`. The production kernel configuration and its reviewed
+feature groups are documented in `docs/kernel/pi4-production.md`.
 
 Useful commands on a debug build:
 
@@ -169,8 +182,12 @@ For boot timing, collect:
 - Video measurement from power applied to first visible useful dashboard pixel.
 - Optional GPIO markers added during the boot-time R&D milestone.
 
-The three-second power-to-browser target is an R&D target. Do not claim success
-unless first useful browser content is measured, not merely process start.
+The three-second power-to-browser target is an R&D target. Firmware loading,
+HDMI/EDID negotiation, kernel/initramfs expansion, DHCP and WPE startup all
+belong in the measurement. Do not claim success unless first useful browser
+content is measured, not merely firmware handoff or process start. The media
+and hardware acceptance gates are tracked in
+`docs/validation/pi4-product-matrix.md`.
 
 ## Raspberry Pi EEPROM Notes
 
@@ -202,5 +219,5 @@ unknown bootloader settings during Dashboard Pi state updates and factory reset.
 
 Project-specific Buildroot integration, scripts, configuration and documentation
 are GPL-2.0-only unless a file states otherwise. Buildroot, Linux, Raspberry Pi
-firmware, Mesa, systemd, WPEPlatform/Thunder and other dependencies retain their
+firmware, Mesa, systemd, WPE WebKit/WPEPlatform and other dependencies retain their
 own upstream licenses.

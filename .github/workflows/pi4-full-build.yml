@@ -1,0 +1,55 @@
+name: Pi 4 full image
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * 0"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install host dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            bc binutils bison build-essential ccache cpio curl file flex gawk \
+            jq libncurses-dev libssl-dev meson ninja-build python3-matplotlib \
+            ripgrep rsync unzip wget xz-utils
+      - name: Restore downloads and compiler cache
+        uses: actions/cache@v5
+        with:
+          path: |
+            ~/.cache/dashboard-pi/buildroot-2026.05/dl
+            ~/.cache/dashboard-pi/ccache
+          key: dashboard-pi4-${{ runner.os }}-${{ hashFiles('br2_external/**', 'scripts/build.sh') }}
+          restore-keys: |
+            dashboard-pi4-${{ runner.os }}-
+      - name: Build Pi 4 image
+        run: ./scripts/build.sh dashboard_pi_rpi4_64_defconfig
+      - name: Verify product image
+        run: |
+          output="$HOME/.cache/dashboard-pi/output/dashboard_pi_rpi4_64_defconfig"
+          ./scripts/verify-pi4-image.sh "$output"
+          cd "$output/images"
+          sha256sum Image rootfs.cpio boot.vfat sdcard.img > SHA256SUMS
+      - name: Upload image and reports
+        uses: actions/upload-artifact@v6
+        with:
+          name: dashboard-pi4-${{ github.sha }}
+          retention-days: 14
+          if-no-files-found: error
+          path: |
+            ~/.cache/dashboard-pi/output/dashboard_pi_rpi4_64_defconfig/images/Image
+            ~/.cache/dashboard-pi/output/dashboard_pi_rpi4_64_defconfig/images/rootfs.cpio
+            ~/.cache/dashboard-pi/output/dashboard_pi_rpi4_64_defconfig/images/boot.vfat
+            ~/.cache/dashboard-pi/output/dashboard_pi_rpi4_64_defconfig/images/sdcard.img
+            ~/.cache/dashboard-pi/output/dashboard_pi_rpi4_64_defconfig/images/artifact-metrics.json
+            ~/.cache/dashboard-pi/output/dashboard_pi_rpi4_64_defconfig/images/SHA256SUMS
+            ~/.cache/dashboard-pi/output/dashboard_pi_rpi4_64_defconfig/graphs/package-size-stats.csv
+            ~/.cache/dashboard-pi/output/dashboard_pi_rpi4_64_defconfig/graphs/file-size-stats.csv

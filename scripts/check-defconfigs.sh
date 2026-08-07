@@ -78,9 +78,68 @@ for cfg in "$repo_root"/br2_external/dashboard_pi/configs/*_defconfig; do
 		require_config "$out/.config" 'BR2_PACKAGE_GST1_PLUGINS_BASE_PLUGIN_ALSA=y' "$name"
 		require_config "$out/.config" 'BR2_PACKAGE_GST1_PLUGINS_GOOD_PLUGIN_ISOMP4=y' "$name"
 		require_config "$out/.config" 'BR2_PACKAGE_GST1_PLUGINS_GOOD_PLUGIN_VPX=y' "$name"
+		require_config "$out/.config" 'BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG=y' "$name"
+		require_config "$out/.config" 'BR2_CCACHE=y' "$name"
 		reject_enabled_config "$out/.config" BR2_PACKAGE_WPEWEBKIT "$name"
 		reject_enabled_config "$out/.config" BR2_PACKAGE_WPEBACKEND_FDO "$name"
 		reject_enabled_config "$out/.config" BR2_PACKAGE_COG "$name"
+		reject_enabled_config "$out/.config" BR2_PACKAGE_XZ "$name"
+		reject_enabled_config "$out/.config" BR2_PACKAGE_RPI_FIRMWARE_INSTALL_DTB_OVERLAYS "$name"
+	fi
+done
+
+pi4_kernel="$repo_root/br2_external/dashboard_pi/board/raspberrypi/rpi4-64/dashboard-pi-rpi4.config"
+for setting in \
+	CONFIG_MODULES \
+	CONFIG_KVM \
+	CONFIG_NUMA \
+	CONFIG_COMPAT \
+	CONFIG_BTRFS_FS \
+	CONFIG_XFS_FS \
+	CONFIG_BCACHEFS_FS \
+	CONFIG_DRM_FBDEV_EMULATION \
+	CONFIG_VT; do
+	reject_enabled_config "$pi4_kernel" "$setting" dashboard-pi-rpi4.config
+done
+
+for setting in \
+	CONFIG_BCMGENET=y \
+	CONFIG_DRM_VC4=y \
+	CONFIG_DRM_V3D=y \
+	CONFIG_DRM_VC4_HDMI_CEC=y \
+	CONFIG_SND_SOC_HDMI_CODEC=y \
+	CONFIG_VIDEO_RPI_HEVC_DEC=y \
+	CONFIG_VIDEO_CODEC_BCM2835=y \
+	CONFIG_MFD_RASPBERRYPI_POE_HAT=y \
+	CONFIG_PWM_RASPBERRYPI_POE=y; do
+	require_config "$pi4_kernel" "$setting" dashboard-pi-rpi4.config
+done
+
+pi4_busybox="$repo_root/br2_external/dashboard_pi/board/raspberrypi/rpi4-64/busybox-production.fragment"
+for setting in CONFIG_UNXZ CONFIG_XZCAT CONFIG_XZ; do
+	if ! rg -qx --fixed-strings "# $setting is not set" "$pi4_busybox"; then
+		printf 'FAILED: Pi 4 BusyBox fragment does not disable %s\n' "$setting" >&2
+		status=1
+	fi
+done
+
+wpe_mk="$repo_root/br2_external/dashboard_pi/package/dashboard-pi-wpewebkit/dashboard-pi-wpewebkit.mk"
+for option in \
+	-DENABLE_MEDIA_SOURCE=ON \
+	-DENABLE_VIDEO=ON \
+	-DENABLE_WEB_AUDIO=ON \
+	-DENABLE_WEB_CODECS=ON \
+	-DUSE_GSTREAMER=ON \
+	-DUSE_GSTREAMER_GL=ON \
+	-DENABLE_PDFJS=OFF \
+	-DENABLE_WEBDRIVER=OFF \
+	-DENABLE_WEBINSPECTORUI=OFF \
+	-DENABLE_THUNDER=OFF \
+	-DENABLE_WK_WEB_EXTENSIONS=OFF \
+	-DENABLE_WPE_PLATFORM_HEADLESS=OFF; do
+	if ! rg -q --fixed-strings -- "$option" "$wpe_mk"; then
+		printf 'FAILED: WPE build lacks required option: %s\n' "$option" >&2
+		status=1
 	fi
 done
 

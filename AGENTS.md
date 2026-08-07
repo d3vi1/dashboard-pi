@@ -9,8 +9,8 @@ distribution using Buildroot.
 - Keep systemd as init unless there is a documented hard blocker.
 - Do not add SSH to production images by default.
 - Do not add a persistent writable root filesystem.
-- Do not switch the product runtime back to Cog/direct WPE launcher. The target
-  architecture is WPEPlatform/Thunder.
+- Do not switch the product runtime to Cog, legacy libwpe or wpebackend-fdo.
+  The target architecture is the project launcher on WPEPlatform DRM/KMS.
 - Keep V1 server-less. Do not add a Dashboard Pi controller, production
   database, OVA, Helm chart, SAML/OIDC/SCIM, fleet manager or license
   enforcement to the V1 appliance.
@@ -31,6 +31,7 @@ distribution using Buildroot.
 ```sh
 ./scripts/check-defconfigs.sh
 ./scripts/build.sh dashboard_pi_rpi4_64_defconfig
+./scripts/verify-pi4-image.sh ~/.cache/dashboard-pi/output/dashboard_pi_rpi4_64_defconfig
 ```
 
 The wrapper scripts use `~/.cache/dashboard-pi` because the repository path may
@@ -52,12 +53,17 @@ no access to the host Docker socket.
 - Document non-obvious boot, kernel, graphics and provisioning choices in
   `docs/decisions/`.
 - Preserve upstream license notices and SPDX identifiers.
+- Keep the Pi 4 production kernel on its dedicated custom configuration. Do
+  not restore `bcm2711_defconfig` plus `CONFIG_MODULES=n`.
+- Measure slimming against the preserved `B1-product-valid` report, not the
+  earlier media-disabled integration baseline.
 
 ## Review Checklist
 
 - Defconfigs run through `./scripts/check-defconfigs.sh`.
 - Pi 4 keeps `dashboard-pi-wpewebkit` and `dashboard-pi-launcher` enabled.
 - Pi 4 does not enable Buildroot `wpewebkit`, `wpebackend-fdo` or Cog.
+- Pi 4 keeps WPE video, Web Audio, WebCodecs, MSE, GStreamer GL and HDMI audio.
 - Production cmdline has no serial console unless intentionally changed.
 - No package pulls in an unnecessary network service.
 - DHCP strings are validated before use.
