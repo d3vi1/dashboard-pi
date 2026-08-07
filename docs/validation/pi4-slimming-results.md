@@ -17,6 +17,7 @@ acceptance gates.
 | WPE production feature trim | `8791753` | 123,726,336 | 286,752,256 | 128,278,528 / 201,326,592 | 1,176 | 10,601,964 / 112,966,323 / 413,808 |
 | Target `xz` and BusyBox applets removed | `a0855bc` | 123,595,264 | 286,458,368 | 128,147,456 / 201,326,592 | 1,176 | 10,601,964 / 112,832,331 / 413,808 |
 | Pi 4 overlay whitelist and dynamic FAT | `0668684` | 123,595,264 | 286,458,368 | 126,345,216 / 145,752,064 | 1,176 | 10,601,964 / 112,833,131 / 413,808 |
+| Final clean `main` acceptance build | `df65344` | 123,595,264 | 286,384,128 | 126,345,216 / 145,752,064 | 1,176 | 10,601,964 / 112,794,819 / 413,808 |
 
 `7ce13c6` was an intentionally measured intermediate kernel selection that did
 not link because it retained Pi 5 RP1 clock consumers without the RP1 platform
@@ -59,10 +60,12 @@ accepted rootfs candidate removed 293,888 uncompressed CPIO bytes and 131,072
 removed 1,802,240 occupied FAT bytes and reduced FAT allocation by 55,574,528
 bytes.
 
-Relative to B1, the accepted `0668684` candidate reduces `Image` by 50,864,128
-bytes (29.16 percent), uncompressed rootfs CPIO by 6,813,696 bytes (2.32
-percent), occupied FAT bytes by 52,666,368 bytes (29.42 percent), and allocated
-FAT bytes by 55,574,528 bytes (27.60 percent).
+Relative to B1, the final clean build reduces `Image` by 50,864,128 bytes
+(29.16 percent), uncompressed rootfs CPIO by 6,887,936 bytes (2.35 percent),
+occupied FAT bytes by 52,666,368 bytes (29.42 percent), and allocated FAT bytes
+by 55,574,528 bytes (27.60 percent). The final clean CPIO is 74,240 bytes
+smaller than the target-reassembly candidate because it contains no residue
+from an earlier package installation.
 
 The rootfs size does not fall when kernel-only code is removed because the
 uncompressed rootfs report remains the same. The embedded gzip archive and the
